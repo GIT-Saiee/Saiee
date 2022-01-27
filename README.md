@@ -25,14 +25,14 @@
 <h1 class = "Header-text">Saiees Interests</h1>
 <ul class="list-text">
     <li><a href="Sites/Cross/cross.html" >CrossStiching</a></li>
-    <li><a href="#">Rangoli</a></li>
-    <li><a href="#">Cooking</a></li>
-    <li><a href="SW_languages/index.html">Learning Software Languages</a></li>
-    <li><a href="#">Origami</a></li>
-    <li><a href="#">Pencil sketching</a></li>
-    <li><a href="#">Oil Painting</a></li>
-    <li><a href="FamilyandKids">Family and Kids</a></li>
-    <li><a href="#">Elders</li>
+    <li><a href="Sites/Rangoli"</a>Rangoli</li>
+    <li><a href="Sites/Cooking"</a>Cooking</li>
+    <li><a href="Sites/SW_languages/index.html">Learning Software Languages</a></li>
+    <li><a href="Sites/Origami">Origami</a></li>
+    <li><a href="Sites/Pencil sketching">Pencil Sketching</a></li>
+    <li><a href="Sites/Oil Painting">Oil Painting</a></li>
+    <li><a href="Sites/FamilyandKids">Family and Kids</a></li>
+    <li><a href="Sites/Elders">Elders</li>
 </ul>
 
 </html>
