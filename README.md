@@ -24,7 +24,7 @@
 </style>
 <h1 class = "Header-text">Saiees Interests</h1>
 <ul class="list-text">
-    <li><a href="Cross/cross.html" >CrossStiching</a></li>
+    <li><a href="Sites/Cross/cross.html" >CrossStiching</a></li>
     <li><a href="#">Rangoli</a></li>
     <li><a href="#">Cooking</a></li>
     <li><a href="SW_languages/index.html">Learning Software Languages</a></li>
