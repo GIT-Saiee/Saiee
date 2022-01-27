@@ -26,7 +26,7 @@
 <ul class="list-text">
     <li><a href="Sites/Cross/cross.html" >CrossStiching</a></li>
     <li><a href="Sites/Rangoli">Rangoli</a></li>
-    <li><a href="Sites/Cooking">Cooking<</a></li>
+    <li><a href="Sites/Cooking">Cooking</a></li>
     <li><a href="Sites/SW_languages/index.html">Learning Software Languages</a></li>
     <li><a href="Sites/Origami">Origami</a></li>
     <li><a href="Sites/Pencil sketching">Pencil Sketching</a></li>
