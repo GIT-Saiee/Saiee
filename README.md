@@ -29,7 +29,7 @@
     <li><a href="Sites/Cooking">Cooking</a></li>
     <li><a href="Sites/SW_languages/index.html">Learning Software Languages</a></li>
     <li><a href="Sites/Origami">Origami</a></li>
-    <li><a href="Sites/Pencil sketching">Pencil Sketching</a></li>
+    <li><a href="Sites/Sketching">Pencil Sketching</a></li>
     <li><a href="Sites/Oil Painting">Oil Painting</a></li>
     <li><a href="Sites/FamilyandKids">Family and Kids</a></li>
 	<li><a href="Sites/Elders">Elders</a></li>
