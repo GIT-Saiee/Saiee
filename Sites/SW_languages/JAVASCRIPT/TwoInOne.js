@@ -14,6 +14,7 @@
       document.getElementById("image").style.color = "yellow";
       
     }
+</script>
   <body>
     
     <img id ="image"src="TwoInOneSculpt.jpg" usemap="#workmap">
