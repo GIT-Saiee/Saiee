@@ -4,12 +4,64 @@
   <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css">
   <style>
     <!--All header-contents style go here-->
-    .nav-link
-    {
-        display:flex;
-        font-weight: bold;
-        padding:1em;
-    }
+     .navbar {
+  overflow: hidden;
+  background-color: PaleTurquoise;;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: purple;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown1 {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown1 .dropbtn1 {
+     font-size: 16px;  
+      border: none;
+      outline: none;
+      color: purple;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+   }
+
+   .navbar a:hover, .dropdown1:hover .dropbtn1 {
+      background-color: purple;
+   }
+
+    .dropdown1-content {
+      display: none;
+      position: absolute;
+      background-color: PaleTurquoise;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+   }
+   .dropdown1-content a {
+      float: none;
+      color: blue;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+   }
+   .dropdown1-content a:hover {
+      background-color: #ddd;
+   }
+
+   .dropdown1:hover .dropdown1-content {
+      display: block;
+     }
+   
     .nav-bar
     {
      display:flex;
@@ -53,17 +105,23 @@
     <!--All body-contents style go here -->
      #video
     {
-      display:flex;
-      justify-content: center;
+      display:box;
+      margin-left:auto;
+      margin-right:auto;
     }
     <!--All Footer-contents code goes here-->
   </style>
   
  <header id="header">
+   <!--Header Icon Design-->
   <img id="header-img" src="design.png">
-  <h1 class="header-txt"> Rangoli</h1>
-  <nav class="nav-bar" id="nav-bar">
     
+   <!--Header Text Design-->
+  <h1 class="header-txt"> Rangoli</h1>
+    
+   <!--Header Navigation Bar-->
+  <nav class="nav-bar" id="nav-bar">
+    <!--First Drop Down in nav-bar-->
     <div class="dropdown1">
     <button class="dropbtn1">Designs
       <i class="fa fa-caret-down"></i>
@@ -74,6 +132,7 @@
       <a href="lotus.html">Lotus</a>
     </div>
     </div> 
+     <!--Second Drop Down in nav-bar-->
     <div class="dropdown2">
     <button class="dropbtn2">How To Draw
       <i class="fa fa-caret-down"></i>
@@ -84,6 +143,7 @@
       <a href="Learn_lotus.html">Lotus</a>
     </div>
     </div> 
+     <!--Third Drop Down in nav-bar-->
     <div class="dropdown3">
     <button class="dropbtn3">Occassions
       <i class="fa fa-caret-down"></i>
