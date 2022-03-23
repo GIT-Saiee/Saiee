@@ -1,5 +1,6 @@
-<script type="text/javascript">
+
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
 $(document).ready(function() {
     var files = {'jpg':28};
     var html = "", src;
