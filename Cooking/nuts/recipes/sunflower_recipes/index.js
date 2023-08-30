@@ -20,8 +20,9 @@ console.log(bodyE1);
 const recipecontainerE1s = document.querySelectorAll(".main-container");
 console.log(recipecontainerE1s);
 recipecontainerE1s.forEach(recipecontainerE1 => {
-    var file = new XMLHttpRequest();            
-    url="http://127.0.0.1:3000/Cooking/nuts/recipes/sunflower_recipes/info/"+String(`info${Number(recipecontainerE1.getAttribute("id"))}.txt`);
+    var file = new XMLHttpRequest(); 
+    var host = window.location.protocol + "//" + window.location.host;           
+    url=host+"/Cooking/nuts/recipes/sunflower_recipes/info/"+String(`info${Number(recipecontainerE1.getAttribute("id"))}.txt`);
     file.open("GET",url,true);
     file.send();
     file.onload= function() {

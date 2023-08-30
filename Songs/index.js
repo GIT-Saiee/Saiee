@@ -12,8 +12,9 @@ songcontainerE1s.forEach(songcontainerE1 => {
 
     //adding Title to song-container
     const titleE1 = document.createElement("h4");
-    var file = new XMLHttpRequest();            
-    url="http://127.0.0.1:3000/Songs/Titles/"+String(`title${songcontainerE1.id}.txt`);
+    var file = new XMLHttpRequest();     
+    var host = window.location.protocol + "//" + window.location.host;       
+    url=host+"/Songs/Titles/"+String(`title${songcontainerE1.id}.txt`);
     console.log(url)
     file.open("GET",url,true);
     file.send();
@@ -72,8 +73,8 @@ songcontainerE1s.forEach(songcontainerE1 => {
         
         function load() {
             var file = new XMLHttpRequest();
-            
-            url="http://127.0.0.1:3000/Songs/Lyrics/"+String(`song${songcontainerE1.id}.html`);
+            var host = window.location.protocol + "//" + window.location.host;
+            url=host+"/Songs/Lyrics/"+String(`song${songcontainerE1.id}.html`);
             console.log(url)
             file.open("GET",url,true);
             file.send();
@@ -112,8 +113,8 @@ imgE1.addEventListener("click",()=>{
         
         function load() {
             var file = new XMLHttpRequest();
-            
-            url="http://127.0.0.1:3000/Songs/Meaning/"+String(`meaning${songcontainerE1.id}.html`);
+            var host = window.location.protocol + "//" + window.location.host;
+            url=host+"/Songs/Meaning/"+String(`meaning${songcontainerE1.id}.html`);
             console.log(url)
             file.open("GET",url,true);
             file.send();
