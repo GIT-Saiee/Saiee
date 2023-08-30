@@ -1,0 +1,159 @@
+
+.navbar{
+    display:flex;
+    background-color: white;
+    width: 100%;
+    justify-content: space-between;
+    align-items:center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.dropdown1{
+    position:relative;
+    display:inline-block
+}
+
+ .dropbtn{
+    border: none;
+    margin: 0 2px;
+    color:black;
+    background-color: white;
+    font-family: cursive;
+
+}
+.dropbtn img{
+    width:20px;
+    height: 20px;
+}
+.dropbtn:hover{
+    color: red;
+}
+.dropdown1-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown1-content a {
+    font-family:cursive;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown1-content a:hover {background-color: #ddd; }
+  .dropdown1:hover .dropdown1-content {display: block;}
+  .dropdown1:hover .dropbtn {background-color: rgb(87, 178, 201);opacity:0.8;}
+
+.navbar.active{
+    background-color: black;
+}
+.navbar.active {
+    color:white
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    align-items:center;
+    background: url("BackDrops/leaf.jpg");
+    background-size:cover;
+    overflow:hidden;
+}
+span{
+    background: url("BackDrops/water.png");
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    pointer-events: none;
+    background-size: cover;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    animation: animate 10s linear;
+    
+}
+
+@keyframes animate{
+    0%{
+        transform: translate(-50%,-50%);
+        opacity: 1;
+        filter: hue-rotate(0);
+    }
+    100%{
+        transform: translate(-50%,5000%);
+        opacity: 0;
+        filter: hue-rotate(-90deg);
+    }
+}
+
+.clock{
+
+    display:flex;
+    height: 100vh;
+    justify-content:flex-end;
+    align-items: center;
+    
+}
+.clock div{
+    margin: 0px;
+    position: relative;
+   
+    
+}
+ .clock #hour,#minutes,#seconds{
+    width: 100px;
+    height: 80px;
+    background: rgb(87, 178, 201);
+    opacity: 0.8;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.clock .text{
+    height: 30px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background: rgb(87, 178, 201);
+    color:white;
+    opacity: 0.8;
+
+}
+.clock #ampm{
+    bottom: 0;
+    width: 60px;
+    height: 110px;
+    font-size: 30px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background:rgb(87, 178, 201) ;
+    color:white;
+    opacity: 0.8;
+}
+h1{
+    color:white;
+    font-family: cursive ;
+    font-weight: bold;
+    font-size: 20px;
+}
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+}

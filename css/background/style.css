@@ -1,0 +1,7 @@
+.multi-bg-example{
+    width: 100%;
+    height: 300px;
+    background-image: url("https://images.unsplash.com/photo-1611606063065-ee7946f0787a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGljb25zfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60") , url("https://images.unsplash.com/photo-1563694983011-6f4d90358083?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aWNvbnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60"), linear-gradient(to bottom,rgb(0, 0, 0),rgba(255,255,255,0));
+    background-repeat: no-repeat;
+    background-position:  bottom left, right;
+}

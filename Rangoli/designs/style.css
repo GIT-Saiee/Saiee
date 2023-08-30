@@ -1,0 +1,33 @@
+#head{
+    text-align: center;
+    color:brown;
+    font-family: cursive;
+    
+}
+p{
+    margin:5px 5px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.muggu-container{
+    display:grid;
+    grid-template-columns:auto auto auto;
+    align-items: center;
+    justify-content: center;
+    
+}
+.grid-item0,.grid-item1,.grid-item2,.grid-item3,.grid-item4,.grid-item5,.grid-item6,.grid-item7,.grid-item8,.grid-item9,.grid-item10,.grid-item11,.grid-item12,.grid-item13,.grid-item14,.grid-item15,.grid-item16{
+    margin:20px;
+}
+.dot{
+    width: 800px;
+    height:100px;
+}
+.sandhu{
+    margin-left: 30%;
+}
+img{
+    width:400px;
+    height:400px;
+}

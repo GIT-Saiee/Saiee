@@ -1,0 +1,95 @@
+body{
+    display: flex;
+    align-items: center;
+    height:100vh;
+    justify-content: center;
+    background-color:white; 
+  }
+.main-container {
+
+    display: grid;
+    grid-template-columns:auto auto auto;
+    padding: 10px;
+}
+.grid-item1 {
+    /* background-color:rgb(232, 160, 160); */
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.grid-item2 {
+    /* background-color:rgb(190, 160, 232); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px 20px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    }
+.grid-item3 {
+    /* background-color:rgb(190, 206, 144); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px 20px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    }
+.grid-item4 {
+    /* background-color:rgb(180, 212, 22); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+    color: rgb(226, 238, 237);
+    font-size: 30px;
+    padding:100px 100px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    }
+.grid-item5 {
+    /* background-color:rgb(114, 22, 212); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px 20px;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    }
+.grid-item6 {
+    /* background-color:rgb(212, 22, 22); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px 20px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    }
+.grid-item7 {
+    /* background-color:rgb(22, 145, 212); */
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding:20px 20px;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    }
+h1{
+    color:orangered;
+}
+h1:hover{
+    cursor: pointer;
+}
+.image.active{
+    visibility:hidden;
+    
+}
+img title{
+    font-size: 50px;
+    color: blue;
+}
+a:hover{
+    cursor:url("wholefoods/laddle.png"),pointer;
+}

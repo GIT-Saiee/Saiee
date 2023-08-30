@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    align-items: center;
+    height:100vh;
+    justify-content: center;
+    background-color:white; 
+  }
+.main-container {
+    display: grid;
+    grid-template-columns:auto auto auto;
+    padding: 10px;
+}
+h2{
+    font-family: cursive;
+    color:orangered
+}
+
+.grid-item1,.grid-item2,.grid-item3,.grid-item4,.grid-item5,.grid-item6,.grid-item7,.grid-item8,.grid-item9 {
+    /* background-color:rgb(232, 160, 160); */
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}

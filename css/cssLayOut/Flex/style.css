@@ -1,0 +1,19 @@
+.wrapper{
+    display: flex;
+    background-color: aquamarine;
+}
+.wrapper>div{
+    flex:1;
+}
+.box1{
+    color:white;
+    background-color: blueviolet;
+}
+.box2{
+    color:white;
+    background-color: brown;
+}
+.box3{
+    color:white;
+    background-color: black;
+}

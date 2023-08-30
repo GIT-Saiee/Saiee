@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <style>
+    ul {
+        margin: 50px;
+        list-style: none;
+    }
+    ul li {
+        margin: 10px;
+        display: inline-block;
+    }
+    ul li a {
+        padding: 5px;
+        display: inline-block;      
+        border: 1px solid #f2f2f2;
+    }
+    ul li a img {
+        width: 250px;
+        height: 250px;
+        display: block;
+    }
+    ul li a:hover img {
+        transform: scale(2.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+      var files = {'jpg':28};
+      var html = "", src;
+      for (var ext in files){
+        for (var i = 0; i < files[ext]; i++){
+            src = "flower/" +(i+1) + "." + ext
+            html += '<li><a href="#"><img src="'+ src +'" width=100 height=100/></a></li>';
+        }
+      $("#Home-Images").prepend(html );
+    }}); 
+    </script>
+  </head>
+  
+  <body>
+    
+    <div id="Home-Image">   
+
+    <h1>Step-By-Step Design Process</h1>
+    <ul id="Home-Images">
+
+      <!--  <button id="toggle-two">View more Images</button>-->
+    </ul>
+  </body>
+</html>

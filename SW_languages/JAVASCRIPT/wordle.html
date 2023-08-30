@@ -1,0 +1,184 @@
+<html>
+<body>
+<div class=title>WORDLE</div>
+<table>
+<tr>
+
+<td colspan="1"><input class= "base_textfield normal_text" type="text" id="textval00" size="1" maxlength="1" onfocus='clear1("textval00")' onkeyup='goNext("textval00","textval01")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval01" size="1" maxlength="1" onfocus='clear1("textval01")' onkeyup='goNext("textval01","textval02")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval02" size="1" maxlength="1" onfocus='clear1("textval02")' onkeyup ='goNext("textval02","textval03")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval03" size="1" maxlength="1" onfocus='clear1("textval03")' onkeyup ='goNext("textval03","textval04")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval04" size="1" maxlength="1" onfocus='clear1("textval04")' onkeyup ='verify(0)'/></td>
+</tr>
+
+<tr>
+
+<td colspan="1"><input class= "base_textfield normal_text" type="text" id="textval10" size="1" maxlength="1" onfocus='clear1("textval10")' onkeyup='goNext("textval10","textval11")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval11" size="1" maxlength="1" onfocus='clear1("textval11")' onkeyup='goNext("textval11","textval12")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval12" size="1" maxlength="1" onfocus='clear1("textval12")' onkeyup ='goNext("textval12","textval13")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval13" size="1" maxlength="1" onfocus='clear1("textval13")' onkeyup ='goNext("textval13","textval14")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval14" size="1" maxlength="1" onfocus='clear1("textval14")' onkeyup ='verify(1)'/></td>
+</tr>
+
+<tr>
+
+<td colspan="1"><input class= "base_textfield normal_text" type="text" id="textval20" size="1" maxlength="1" onfocus='clear1("textval20")' onkeyup='goNext("textval20","textval21")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval21" size="1" maxlength="1" onfocus='clear1("textval21")' onkeyup='goNext("textval21","textval22")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval22" size="1" maxlength="1" onfocus='clear1("textval22")' onkeyup ='goNext("textval22","textval23")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval23" size="1" maxlength="1" onfocus='clear1("textval23")' onkeyup ='goNext("textval23","textval24")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval24" size="1" maxlength="1" onfocus='clear1("textval24")' onkeyup ='verify(2)'/></td>
+</tr>
+
+<tr>
+
+<td colspan="1"><input class= "base_textfield normal_text" type="text" id="textval30" size="1" maxlength="1" onfocus='clear1("textval30")' onkeyup='goNext("textval30","textval31")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval31" size="1" maxlength="1" onfocus='clear1("textval31")' onkeyup='goNext("textval31","textval32")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval32" size="1" maxlength="1" onfocus='clear1("textval32")' onkeyup ='goNext("textval32","textval33")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval33" size="1" maxlength="1" onfocus='clear1("textval33")' onkeyup ='goNext("textval33","textval34")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval34" size="1" maxlength="1" onfocus='clear1("textval34")' onkeyup ='verify(3)'/></td>
+</tr>
+
+<tr>
+
+<td colspan="1"><input class= "base_textfield normal_text" type="text" id="textval40" size="1" maxlength="1" onfocus='clear1("textval40")' onkeyup='goNext("textval40","textval41")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval41" size="1" maxlength="1" onfocus='clear1("textval41")' onkeyup='goNext("textval41","textval42")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval42" size="1" maxlength="1" onfocus='clear1("textval42")' onkeyup ='goNext("textval42","textval43")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval43" size="1" maxlength="1" onfocus='clear1("textval43")' onkeyup ='goNext("textval43","textval44")'/></td>
+<td colspan="1"><input  class= "base_textfield normal_text" type="text" id="textval44" size="1" maxlength="1" onfocus='clear1("textval44")' onkeyup ='verify(4)'/></td>
+</tr>
+
+
+</table>
+<table>
+<tr>
+<td><input type="button" id="a" value="a" onclick="display('a')"/></td>
+<td><input type="button" id="b" value="b" onclick="display('b')"/> </td>
+<td><input type="button" id="c" value="c" onclick="display('c')"/> </td>
+<td><input type="button" id="d" value="d" onclick="display('d')"/> </td>
+<td><input type="button" id="e" value="e" onclick="display('e')"/> </td>
+<td><input type="button" id="f" value="f" onclick="display('f')"/> </td>
+<td><input type="button" id="g" value="g" onclick="display('g')"/> </td>
+<td><input type="button" id="h" value="h" onclick="display('h')"/> </td>
+<td><input type="button" id="i" value="i" onclick="display('i')"/> </td>
+</tr>
+
+<tr>
+<td><input type="button" id="j" value="j" onclick="display('j')"/> </td>
+<td><input type="button" id="k" value="k" onclick="display('k')"/> </td>
+<td><input type="button" id="l" value="l" onclick="display('l')"/> </td>
+<td><input type="button" id="m" value="m" onclick="display('m')"/> </td>
+<td><input type="button" id="n" value="n" onclick="display('n')"/></td>
+<td><input type="button" id="o" value="o" onclick="display('o')"/> </td>
+<td><input type="button" id="p" value="p" onclick="display('p')"/> </td>
+<td><input type="button" id="q" value="q" onclick="display('q')"/> </td>
+<td><input type="button" id="r" value="r" onclick="display('r')"/> </td>
+</tr>
+
+<tr>
+<td><input type="button" id="s" value="s" onclick="display('s')"/> </td>
+<td><input type="button" id="t" value="t" onclick="display('t')"/></td>
+<td><input type="button" id="u" value="u" onclick="display('u')"/> </td>
+<td><input type="button" id="v" value="v" onclick="display('v')"/> </td>
+<td><input type="button" id="w" value="w" onclick="display('w')"/> </td> 
+<td><input type="button" id="x" value="x" onclick="display('x')"/></td>
+<td><input type="button" id="y" value="y" onclick="display('y')"/></td>
+<td><input type="button" id="z" value="z" onclick="display('z')"/></td>
+<td><input type="button" id="clr" value="clr" onclick="clear()"/> </td>
+</tr>
+</table>
+<style>
+
+/* Green */
+.success_button {
+    background-color: #4CAF50;
+    color: white;
+}
+.yellow_button{
+	background-color: #FFFF00;
+    color: black;
+}
+.base_textfield {
+  border: none;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.normal_text
+{
+  background-color: #e7e7e7; 
+  color: black;
+}
+.success_text {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+.yellow_text {
+  background-color: #FFFF00; //yellow
+  color: black;
+}
+	</style>
+
+<script>
+	window.onload = function() {
+  document.getElementById("textval00").focus();
+};
+
+const NUM_SLOTS = 5;
+const magic_word="world";
+
+function clear1(val)
+{
+ document.getElementById(val).value = ""
+}
+function goNext(current,next)
+{
+	if (document.getElementById(current) == "")
+		return;
+	else
+	document.getElementById(next).focus()
+}
+function gameOver()
+{
+	for (let row = 0;  row < NUM_SLOTS; row++)
+		for(let col = 0; col< magic_word.length; col++)
+		{
+			var tf_id ="textval"+row+col
+			document.getElementById(tf_id).disabled = true;
+		}
+}
+function verify(row_id)
+{
+	
+	var num_of_matches = 0
+	for (let i = 0; i < NUM_SLOTS; i++)
+	{
+		//alert("textval"+i)
+		var textval_node = document.getElementById("textval"+row_id+i)
+		if (magic_word[i]==textval_node.value){
+			//alert("success")
+			document.getElementById(magic_word[i]).classList.add('success_button')
+			textval_node.classList.remove("normal_text");
+			textval_node.classList.add('success_text');
+			num_of_matches += 1;
+		}
+		else if(magic_word.includes(textval_node.value)== true){
+			textval_node.classList.remove("normal_text");
+			textval_node.classList.add('yellow_text')
+			document.getElementById(textval_node.value).classList.add('yellow_button')
+
+		}
+		
+	}
+	if(num_of_matches == 5)
+	{
+		gameOver();
+		alert("Game Over");
+	}else
+		document.getElementById("textval"+(row_id+1)+"0").focus();
+	//alert("your guessis wrong");
+}
+</script>
+</body>
+</html>

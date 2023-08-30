@@ -1,0 +1,39 @@
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    row-gap: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(248, 198, 100);
+}
+p{
+    margin:0px 15px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    font-size: 18px;
+    font-family:'Times New Roman', Times, serif;
+}
+h1{
+    color:brown;
+    text-align: center;
+    font-family: cursive;
+}
+em{
+    color:darkred;
+}
+.map-container{
+    pointer-events:all;
+    overflow: hidden;
+   
+}
+img-container{
+    pointer-events: all;
+}
+/* .img-active{
+    top:var(--yPos);
+    left:var(--xPos);
+    transform: translate(-50%,-50%);
+    z-index: 1;
+} */

@@ -1,0 +1,30 @@
+.text-decorate{
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: Lobster,monospace;
+    background-color: pale green;
+    color:skyblue
+}
+.rotate-icon{
+    position:absolute;
+    right: 10px;
+    width:30px;
+    height:30px;
+
+}
+
+.sketch-img{
+    width:500px;
+    border-radius:5px;
+    padding:5px 5px;
+}
+.container{
+    display: grid;
+    grid-template-columns:auto auto auto; 
+    justify-content: center;
+    position:absolute;
+    
+}
+.img-container{
+    position:relative;
+}

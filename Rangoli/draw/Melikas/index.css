@@ -1,0 +1,8 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height:100vh;
+    justify-content: center;
+    align-items: left;
+}
