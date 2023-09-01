@@ -4,7 +4,7 @@ body{
     justify-content: center;
 }
 .main-container{
-    display:flex;
+    display:grid;
     
     align-items:center;
     height:100vh;
@@ -16,20 +16,66 @@ body{
 }
 
 .song-container{ 
-    
-    position: relative;   
+    display:grid; 
+    grid-template-columns:auto auto auto;
+    position: relative;    
     color:white;
     font-size: 20px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     border:solid black 2px;
     border-radius: 10px;
-    min-width: 500px;
-    min-height: 100px;
+    min-width: 600px;
+    min-height: 150px;
     opacity: 1; 
-    margin: 10px 10px; 
+    /* margin: 10px 10px;  */
     scrollbar-3dlight-color: blueviolet;
     
+    
 }
+
+.title p{
+    /* background-color:rgb(232, 160, 160); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
+}
+/* .write-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    } */
+/* .meaning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    } */
+
+.audio{
+    /* background-color:rgb(114, 22, 212); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding: 10px 10px;
+    }
+
+
 
 .song-container.active{  
     block-size: 15%;
@@ -39,8 +85,15 @@ body{
 }
 
 
- .text-container{
-    background: lightblue;
+ .text-container1{
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: rgb(178, 21, 192);
     margin:10px 10px;
     padding:10px 10px;
     font-family: cursive;
@@ -54,43 +107,105 @@ body{
     
     max-height: 100px;
     max-width: 500px;
+
+    
+} 
+.text-container2{
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: rgb(62, 114, 48);
+    margin:10px 10px;
+    padding:10px 10px;
+    font-family: cursive;
+    color:black;
+    letter-spacing: 2px;
+    font-weight:bold;
+    border:solid black 2px;
+    border-radius: 10px;
+    text-shadow: none;
+    overflow-y: scroll;
+ 
+    max-height: 100px;
+    max-width: 500px;
     
 } 
 
-.text-container.active{
+.text-container1.active{
     visibility: hidden;
     max-width: 500px;
 
 }
 
-
+.text-container2.active{
+    visibility: hidden;
+    max-width: 500px;
+} 
 .write-icon{
-    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    position: absolute; 
+    /* padding: 10px 10px; */
     top: 25px;
     right:20px;
     color:white;
     cursor:pointer;
     
 }
-.img{
-    position: absolute;
+.meaning{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: absolute;  */
+    /* padding: 10px 10px; */
     top: 2px;
     right: 35px;
     color:white;
     cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
     
 }
-.img.active{
+.meaning.active{
     color : rgb(0, 255, 76);
 }
 .write-icon.active{
     color : rgb(0, 255, 76);
 }
+.audio{
+    /* position:absolute; */
+    /* top:80px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .audio.active{
-    position: absolute;
-    top:80px;
+    /* position: absolute; */
+    /* top:80px; */
     color:white;
     cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
  
 }
 @media(max-width:991px){

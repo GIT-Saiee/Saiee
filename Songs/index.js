@@ -12,6 +12,7 @@ songcontainerE1s.forEach(songcontainerE1 => {
 
     //adding Title to song-container
     const titleE1 = document.createElement("h4");
+    titleE1.classList.add("title");
     var file = new XMLHttpRequest();     
     var host = window.location.protocol + "//" + window.location.host;       
     url=host+"/Saiee/Songs/Titles/"+String(`title${songcontainerE1.id}.txt`);
@@ -27,28 +28,21 @@ songcontainerE1s.forEach(songcontainerE1 => {
         }
     }
     songcontainerE1.appendChild(titleE1);
-    const imgE1 = document.createElement("img");
-    imgE1.src="Meaning/meaning.png";
-    imgE1.title="Meaning"
-    imgE1.classList.add("img");
-    songcontainerE1.appendChild(imgE1);
+    const meaningE1 = document.createElement("img");
+    meaningE1.src="Meaning/meaning.png";
+    meaningE1.title="Meaning"
+    meaningE1.classList.add("meaning");
+    meaningE1.classList.add("active");
+    songcontainerE1.appendChild(meaningE1);
 
     //adding write-icon to song-container
-    const writeiconE1 = document.createElement("i");
-    writeiconE1.classList.add("fa-solid");
-    writeiconE1.classList.add("fa-pen" );
-    writeiconE1.classList.add("write-icon");
-    writeiconE1.classList.add("active");
-    writeiconE1.title="lyrics";
-    songcontainerE1.appendChild(writeiconE1);
-
-    //adding text-container to song-container
-    const textcontainerE1 = document.createElement("div");
-    textcontainerE1.classList.add("text-container");
-    textcontainerE1.classList.add("active");
-    textcontainerE1.id ="t"+`${songcontainerE1.id}`;
-    console.log(textcontainerE1.id);
-    songcontainerE1.appendChild(textcontainerE1);
+    const lyricsE1 = document.createElement("i");
+    lyricsE1.classList.add("fa-solid");
+    lyricsE1.classList.add("fa-pen" );
+    lyricsE1.classList.add("write-icon");
+    lyricsE1.classList.add("active");
+    lyricsE1.title="lyrics";
+    songcontainerE1.appendChild(lyricsE1);
 
     //adding audio to song-container
     const audioE1 = document.createElement("audio");
@@ -61,87 +55,96 @@ songcontainerE1s.forEach(songcontainerE1 => {
     console.log(audioE1);
     songcontainerE1.appendChild(audioE1);
 
+    lyricsE1.addEventListener("click",()=>{
+        if (lyricsE1.classList.contains("active")){
+            console.log("hello")
+            lyricsE1.classList.remove("active");
+            songcontainerE1.classList.remove("active");
+            const textcontainerE1 = document.createElement("div");
+            textcontainerE1.classList.add("text-container1")
+            textcontainerE1.id ="t"+`${songcontainerE1.id}`;
 
-    writeiconE1.addEventListener("click",()=>{
-    console.log(songcontainerE1);
-    if(writeiconE1.classList.contains("active")){
+            element2 = document.querySelector(".text-container2");
+            if(element2 != null){
+                meaningE1.classList.add("active");
+                element2.parentNode.removeChild(element2);
+            }
+            songcontainerE1.appendChild(textcontainerE1);
 
-        songcontainerE1.classList.remove("active");
-        writeiconE1.classList.remove("active");
-        textcontainerE1.classList.remove("active");
-        load(); 
+            load();
         
-        function load() {
-            var file = new XMLHttpRequest();
-            var host = window.location.protocol + "//" + window.location.host;
-            url=host+"/Saiee/Songs/Lyrics/"+String(`song${songcontainerE1.id}.html`);
-            console.log(url)
-            file.open("GET",url,true);
-            file.send();
-            file.onload= function() {
-                if (file.readyState === XMLHttpRequest.DONE) {  // Makes sure the document is ready to parse
-                    if (file.status === 200) {  // Makes sure it's found the file
-                        text = file.responseText;
-                        document.getElementById(textcontainerE1.id).innerHTML = text;
+            function load() {
+                var file = new XMLHttpRequest();
+                var host = window.location.protocol + "//" + window.location.host;
+                url=host+"/Saiee/Songs/Lyrics/"+String(`song${songcontainerE1.id}.html`);
+                console.log(url)
+                file.open("GET",url,true);
+                file.send();
+                file.onload= function() {
+                    if (file.readyState === XMLHttpRequest.DONE) {  // Makes sure the document is ready to parse
+                        if (file.status === 200) {  // Makes sure it's found the file
+                            text = file.responseText;
+                            document.getElementById(textcontainerE1.id).innerHTML = text;
+                        }
                     }
                 }
             }
+        } else {
+            lyricsE1.classList.add("active");
+            let textcontainerE1 = document.querySelector(".text-container1");
+            let textcontainerE2 = document.querySelector(".text-container2");
+            if(textcontainerE1!=null){
+                textcontainerE1.parentNode.removeChild(textcontainerE1);  
+            }
+            songcontainerE1.classList.add("active");
         }
-        audioE1.classList.remove("active");
-    }
-    else{    
-
-        songcontainerE1.classList.add("active");        
-        writeiconE1.classList.add("active");
-        textcontainerE1.classList.add("active");
-        audioE1.classList.add("active");
-        
-    }
+    })
+    meaningE1.addEventListener("click",()=>{
+        if (meaningE1.classList.contains("active")){
+            meaningE1.classList.remove("active");
+            songcontainerE1.classList.remove("active");
+            const textcontainerE2 = document.createElement("div");
+            textcontainerE2.classList.add("text-container2")
+            textcontainerE2.id ="t"+`${songcontainerE1.id}`;
     
-    
-});
+            element1 = document.querySelector(".text-container1");
+            if(element1 != null){
+                lyricsE1.classList.add("active")
+                element1.parentNode.removeChild(element1);
+            }
+            
+            songcontainerE1.appendChild(textcontainerE2);
 
+            load();
 
-imgE1.addEventListener("click",()=>{
-    console.log(songcontainerE1);
-    if(imgE1.classList.contains("active")){
-
-        songcontainerE1.classList.remove("active");
-        imgE1.classList.remove("active");
-        textcontainerE1.classList.remove("active");
-        load(); 
-        
-        function load() {
-            var file = new XMLHttpRequest();
-            var host = window.location.protocol + "//" + window.location.host;
-            url=host+"/Saiee/Songs/Meaning/"+String(`meaning${songcontainerE1.id}.html`);
-            console.log(url)
-            file.open("GET",url,true);
-            file.send();
-            file.onload= function() {
-                if (file.readyState === XMLHttpRequest.DONE) {  // Makes sure the document is ready to parse
-                    if (file.status === 200) {  // Makes sure it's found the file
-                        text = file.responseText;
-                        document.getElementById(textcontainerE1.id).innerHTML = text;
+            function load() {
+                var file = new XMLHttpRequest();
+                var host = window.location.protocol + "//" + window.location.host;
+                url=host+"/Saiee/Songs/Meaning/"+String(`meaning${songcontainerE1.id}.html`);
+                console.log(url)
+                file.open("GET",url,true);
+                file.send();
+                file.onload= function() {
+                    if (file.readyState === XMLHttpRequest.DONE) {  // Makes sure the document is ready to parse
+                        if (file.status === 200) {  // Makes sure it's found the file
+                            text = file.responseText;
+                            document.getElementById(textcontainerE2.id).innerHTML = text;         
+                        }
                     }
                 }
             }
+        } else {
+            meaningE1.classList.add("active")
+            
+           let textcontainerE2 = document.querySelector(".text-container2");
+           let textcontainerE1 = document.querySelector(".text-container1");
+           if(textcontainerE2!=null){
+                textcontainerE2.parentNode.removeChild(textcontainerE2);
+           }
+      
+           songcontainerE1.classList.add("active");
         }
-        audioE1.classList.remove("active");
-    }
-    else{    
-
-        songcontainerE1.classList.add("active");        
-        imgE1.classList.add("active");
-        textcontainerE1.classList.add("active");
-        audioE1.classList.add("active");
-        
-    }
-    
-    
-});
-
-
+    })
 });
 
 generateColors();
