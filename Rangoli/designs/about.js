@@ -55,6 +55,8 @@ window.addEventListener('resize',()=>{
     imgE1.src = "images/dot.png";
     imgE1.classList.add("img-active");
     
+    
+
     imgE1.style.position = 'absolute';
     imgE1.style.left =  map.offsetLeft +120+ 'px';
     imgE1.style.top =  map.offsetTop-190 + 'px';
@@ -69,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgE1 = document.createElement("img");
     imgE1.src = "images/dot.png";
     imgE1.classList.add("img-active");
+
+    
     
     imgE1.style.position = 'absolute';
     imgE1.style.left =  map.offsetLeft +120+ 'px';

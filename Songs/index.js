@@ -8,6 +8,7 @@ for (let index = 0; index < song_container_count; index++) {
     maincontainerE1.appendChild(element);
 }
 const songcontainerE1s = document.querySelectorAll(".song-container");
+console.log(songcontainerE1s);
 songcontainerE1s.forEach(songcontainerE1 => {
 
     //adding Title to song-container
