@@ -230,18 +230,12 @@ h4{
 
 
 .prev{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 2;
 }
 .next{
-    display:flex;
-    align-items: center;
-    justify-content: right;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 3;
