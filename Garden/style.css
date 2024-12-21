@@ -2,7 +2,6 @@
 
 
 
-
 body{
     margin: 0;
     display:flex;
@@ -11,42 +10,16 @@ body{
     align-items: center;
     background-color: wheat;
 }
-.sketch-img{
-    width:500px;
-    height:500px;
-    border-radius:5px;
-    background-size: cover;
-}
-.slider-container{
-    position: relative;
-    width:500px;
-    height:500px;
-    overflow: hidden  ;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
+
 .img-container{
-    display: flex;
-    transition: transform 0.4s ease-in-out;
+	margin:10px 50px;
 }
+.img-container img{
+    width : 200px;
+    padding: 15px;
+    transition: 1s;
+}
+.img-container:hover{
+	filter:grayscale(100%)
 
-
-
-.btn{
-    position:absolute;
-    top:50%;
-    transform: translateY(-50%);
-    color:white;
-    font-size:20px;
-    opacity :0.5;
-    cursor: pointer;
-}
-.btn.prev{
-left:10px;
-}
-.btn.next{
-    right:10px;
-}
-.btn:hover{
-    opacity:1;
 }
