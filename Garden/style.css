@@ -20,7 +20,7 @@ body{
     padding: 15px;
     transition: 1s;
 }
-.img-container:hover{
+.img-container img:hover{
 	filter:grayscale(100%)
 
 }
