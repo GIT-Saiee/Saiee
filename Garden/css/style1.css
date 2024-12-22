@@ -1,0 +1,78 @@
+.bubble {
+  display: inline-block;
+  width: 152px;
+  height: 152px;
+  margin: 8px;
+  border-radius: 50%;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.1),
+    0 3px 10px rgba(0, 0, 0, 0.1);
+  background-image: url(../../sprite_sheet.png);
+  background-size: 1076px 1076px;
+}
+
+.dosa {
+  background-position: 0 0;
+}
+
+.green_lotus.jpg {
+  background-position: 0 -154px;
+}
+
+.hibi {
+  background-position: 0 -308px;
+}
+.hibi_1 {
+  background-position: 0 -154px;
+}
+
+.smallsun {
+  background-position: 0 -308px;
+}
+.sun_flower {
+  background-position: 0 -154px;
+}
+
+.small_methi {
+  background-position: 0 -308px;
+}
+.methi{
+  background-position: 0 -154px;
+}
+
+.tulasi {
+  background-position: 0 -308px;
+}
+.tom {
+  background-position: 0 -154px;
+}
+
+.pom {
+  background-position: 0 -308px;
+}
+.ladybug {
+  background-position: 0 -154px;
+}
+
+.cosmos {
+  background-position: 0 -308px;
+}
+.dragon_fly {
+  background-position: 0 -154px;
+}
+
+.mari.jpg {
+  background-position: 0 -308px;
+}
+.mirchi {
+  background-position: 0 -154px;
+}
+
+.swiss {
+  background-position: 0 -308px;
+}
+
+body {
+  background: #E6EEF7;
+  padding: 8px;
+}
