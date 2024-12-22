@@ -8,15 +8,15 @@
     0 15px 35px rgba(0, 0, 0, 0.1),
     0 3px 10px rgba(0, 0, 0, 0.1);
   background-image: url(../../sprite_sheet.png);
-  background-size: 1076px 1076px;
+  background-size: 1000px 1335px;
 }
 
 .dosa {
-  background-position: 0 0;
+  background-position: 292 666px;
 }
 
 .green_lotus.jpg {
-  background-position: 0 -154px;
+  background-position: 528 966px;
 }
 
 .hibi {
