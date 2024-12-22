@@ -12,7 +12,7 @@
 }
 
 .dosa {
-  background-position: 206 600 394 730px;
+  background-position:204 536px;
 }
 
 .green_lotus.jpg {
@@ -20,45 +20,45 @@
 }
 
 .hibi {
-  background-position: 72 920px;
+  background-position: 0 810px;
 }
 .hibi_1 {
-  background-position: 0 -154px;
+  background-position: 604 538px;
 }
 
 .smallsun {
-  background-position: 0 -308px;
+  background-position: 804 0px;
 }
 .sun_flower {
-  background-position: 0 -154px;
+  background-position: 602 0px;
 }
 
 .small_methi {
-  background-position: 0 -308px;
+  background-position: 0 268px;
 }
 .methi{
-  background-position: 0 -154px;
+  background-position: 804 0px;
 }
 
 .tulasi {
-  background-position: 0 -308px;
+  background-position: 0 0px;
 }
 .tom {
-  background-position: 0 -154px;
+  background-position: 214 0px;
 }
 
 .pom {
-  background-position: 0 -308px;
+  background-position:210  268px;
 }
 .ladybug {
-  background-position: 0 -154px;
+  background-position: 0 550px;
 }
 
 .cosmos {
-  background-position: 0 -308px;
+  background-position: 400 1068px;
 }
 .dragon_fly {
-  background-position: 0 -154px;
+  background-position: 0 1086px;
 }
 
 .mari.jpg {
@@ -70,6 +70,10 @@
 
 .swiss {
   background-position: 0 -308px;
+}
+
+.greenhouse{
+ background-position: 222 804px;
 }
 
 body {
