@@ -1,0 +1,37 @@
+{
+   "style_name": "garden",
+   "images": [
+      "..\\images\\jpgs\\small_jpgs\\cosmos.jpg",
+      "..\\images\\jpgs\\small_jpgs\\dosa.jpg",
+      "..\\images\\jpgs\\small_jpgs\\dragon_fly.jpg",
+      "..\\images\\jpgs\\small_jpgs\\green_lotus.jpg",
+      "..\\images\\jpgs\\small_jpgs\\green1.jpg",
+      "..\\images\\jpgs\\small_jpgs\\green2.jpg",
+      "..\\images\\jpgs\\small_jpgs\\greenhouse.jpg",
+      "..\\images\\jpgs\\small_jpgs\\hibi_1.jpg",
+      "..\\images\\jpgs\\small_jpgs\\hibi_2.jpg",
+      "..\\images\\jpgs\\small_jpgs\\hibi.jpg",
+      "..\\images\\jpgs\\small_jpgs\\IMG_0410.jpg",
+      "..\\images\\jpgs\\small_jpgs\\IMG_0979.jpg",
+      "..\\images\\jpgs\\small_jpgs\\ladybug.jpg",
+      "..\\images\\jpgs\\small_jpgs\\mari.jpg",
+      "..\\images\\jpgs\\small_jpgs\\methi.jpg",
+      "..\\images\\jpgs\\small_jpgs\\mirchi.jpg",
+      "..\\images\\jpgs\\small_jpgs\\pom.jpg",
+      "..\\images\\jpgs\\small_jpgs\\small_methi.jpg",
+      "..\\images\\jpgs\\small_jpgs\\smallsun.jpg",
+      "..\\images\\jpgs\\small_jpgs\\sun_flower.jpg",
+      "..\\images\\jpgs\\small_jpgs\\swiss.jpg",
+      "..\\images\\jpgs\\small_jpgs\\tom.jpg",
+      "..\\images\\jpgs\\small_jpgs\\tulasi.jpg"
+   ],
+   "orientation": "vertical",
+   "padding": 5,
+   "custom_styles": {
+      "display": "inline-block"
+   },
+   "stylesheet": "css",
+   "path_prefix": "",
+   "output": "png",
+   "enable_cache_busting": true
+}
