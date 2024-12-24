@@ -1,30 +1,47 @@
-.text-decorate{
-    margin-bottom: 25px;
-    text-align: center;
-    font-family: Lobster,monospace;
-    background-color: pale green;
-    color:skyblue
-}
-.rotate-icon{
-    position:absolute;
-    right: 10px;
-    width:30px;
-    height:30px;
+/* styles.css */
 
-}
-
-.sketch-img{
-    width:500px;
-    border-radius:5px;
-    padding:5px 5px;
-}
-.container{
-    display: grid;
-    grid-template-columns:auto auto auto; 
-    justify-content: center;
-    position:absolute;
-    
-}
-.img-container{
-    position:relative;
-}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .floating-image {
+    position: absolute;
+    width: 150px;
+    transition: transform 0.3s, z-index 0.3s;
+    cursor: pointer;
+  }
+  
+  /* Randomly place images on the page */
+  .floating-image:nth-child(1) {
+    top: 50px;
+    left: 100px;
+    z-index: 1;
+  }
+  
+  .floating-image:nth-child(2) {
+    top: 200px;
+    left: 300px;
+    z-index: 2;
+  }
+  
+  .floating-image:nth-child(3) {
+    top: 100px;
+    left: 500px;
+    z-index: 3;
+  }
+  
+  .floating-image:nth-child(4) {
+    top: 350px;
+    left: 200px;
+    z-index: 4;
+  }
+  
