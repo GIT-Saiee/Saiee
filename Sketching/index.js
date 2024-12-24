@@ -8,7 +8,6 @@ const images = document.querySelectorAll('.floating-image');
 
 
 
-
 // Set the image container dimensions
 const containerWidth = window.innerWidth;
 const containerHeight = window.innerHeight;
@@ -40,6 +39,8 @@ let topZIndex = 5; // Start with a number higher than any initial z-index
 
 // Add click event listeners to each image
 images.forEach((img) => {
+  const randomRotation = Math.floor(Math.random() * 40) - 20;
+
   img.addEventListener('click', () => {
     // Increase the top z-index and assign it to the clicked image
     topZIndex++;
@@ -50,7 +51,8 @@ images.forEach((img) => {
 
     // Reset the scale back after a short time
     setTimeout(() => {
-      img.style.transform = 'scale(1)';
+      img.style.transform = 'scale(1)';img.style.transform = `rotate(${randomRotation}deg)`;
     }, 1000);
   });
+
 });
