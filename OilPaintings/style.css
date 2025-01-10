@@ -16,6 +16,8 @@ body{
     height:500px;
     border-radius:5px;
     background-size: cover;
+    background-position: center;
+    box-sizing: content-box;
 }
 .slider-container{
     position: relative;
