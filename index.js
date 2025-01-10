@@ -55,9 +55,9 @@ const quotes = ["Do not be proud of wealth, people, relations and friends, or yo
 "Speak the truth in such a way that it is pleasing to others. Do not speak the truth in a manner injurious to others. Never speak untruth, though it may be pleasant. This is the eternal path of morality and dharma.--Bhagavad Gita",
 “You are what you believe in. You become that which you believe you can become --Bhagavad Gita”,
 “You are only entitled to the action, never to its fruits.--Bhagavad Gita”,
-“It is better to live your own destiny imperfectly then to live an imitation of somebody else's life with perfection.--Bhagavad Gita”,
-“Free from all thoughts of 'I' and 'mine', a man finds absolute peace.--Bhagavad Gita”,
-"In the heart of a person who is humble, patience, forgiveness, and devotion naturally grow.--Bhagavad Gita"
+“It is better to live your own destiny imperfectly then to live an imitation of somebody elses life with perfection.--Bhagavad Gita”,
+“Free from all thoughts of I and mine, a man finds absolute peace.--Bhagavad Gita”,
+"In the heart of a person who is humble, patience, forgiveness, and devotion naturally grow.--Bhagavad Gita",
 ];
 
 let quoteIndex = 0;
