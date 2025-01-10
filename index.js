@@ -52,7 +52,13 @@ const quotes = ["Do not be proud of wealth, people, relations and friends, or yo
 "The only spiritual life you need is not to react. To be calm is the greatest asset in the world. When you are perfectly calm,time stops. There is no time, karma stops, samskaras stop. Everything becomes null and void. -- Ramana Maharshi",
 "The one who plant trees, knowing that he will never sit in their shade, has atleast started to understand the meaning of life. --Rabindranath Tagore",
 "Be the change that you wish to see in the world. --Mahatma Gandhi",
-"Speak the truth in such a way that it is pleasing to others. Do not speak the truth in a manner injurious to others. Never speak untruth, though it may be pleasant. This is the eternal path of morality and dharma.--Bhagavad Gita"];
+"Speak the truth in such a way that it is pleasing to others. Do not speak the truth in a manner injurious to others. Never speak untruth, though it may be pleasant. This is the eternal path of morality and dharma.--Bhagavad Gita",
+“You are what you believe in. You become that which you believe you can become --Bhagavad Gita”,
+“You are only entitled to the action, never to its fruits.--Bhagavad Gita”
+“It is better to live your own destiny imperfectly then to live an imitation of somebody else's life with perfection.--Bhagavad Gita”
+“Free from all thoughts of 'I' and 'mine', a man finds absolute peace.--Bhagavad Gita””
+"In the heart of a person who is humble, patience, forgiveness, and devotion naturally grow.--Bhagavad Gita"
+];
 
 let quoteIndex = 0;
 let characterIndex = 0;
