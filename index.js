@@ -77,7 +77,9 @@ function updateText(){
     containerE1.innerHTML = `<h1> ${quotes[quoteIndex].slice(0,characterIndex)}</h1>`;
     if(characterIndex === quotes[quoteIndex].length){
         quoteIndex++;
-        characterIndex = 0 ;
+	 if(quoteIndex == quotes.length):
+		quoteIndex = 0 
+         characterIndex = 0 ;
     }
     setTimeout(updateText,200);
 }
