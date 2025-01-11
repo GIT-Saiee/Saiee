@@ -73,10 +73,10 @@ function getRandomIntInclusive(min, max) {
 
 function updateText(){
     characterIndex++;
-    //containerE1.innerHTML = `<h1> ${quotes[quoteIndex].slice(0,characterIndex)}</h1>`;
+
     containerE1.innerHTML = `<h1> ${quotes[quoteIndex].slice(0,characterIndex)}</h1>`;
     if(characterIndex === quotes[quoteIndex].length){
-        //quoteIndex++;
+       
         characterIndex = 0 ;
     }
     setTimeout(updateText,200);
