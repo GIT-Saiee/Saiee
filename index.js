@@ -60,16 +60,23 @@ const quotes = ["Do not be proud of wealth, people, relations and friends, or yo
 "In the heart of a person who is humble, patience, forgiveness, and devotion naturally grow.--Bhagavad Gita"
 ];
 
-let quoteIndex = 0;
+let quoteIndex = getRandomIntInclusive(0,quotes.length);
 let characterIndex = 0;
 
 updateText();
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function updateText(){
     characterIndex++;
+    //containerE1.innerHTML = `<h1> ${quotes[quoteIndex].slice(0,characterIndex)}</h1>`;
     containerE1.innerHTML = `<h1> ${quotes[quoteIndex].slice(0,characterIndex)}</h1>`;
-    
     if(characterIndex === quotes[quoteIndex].length){
-        quoteIndex++;
+        //quoteIndex++;
         characterIndex = 0 ;
     }
     setTimeout(updateText,200);
