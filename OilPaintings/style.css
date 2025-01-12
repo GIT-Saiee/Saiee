@@ -20,6 +20,7 @@ body{
     box-sizing: content-box;
     object-fit: contain;
     object-fit: cover;
+    Text-align:center
 }
 .slider-container{
     position: relative;
@@ -30,6 +31,7 @@ body{
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     object-fit: contain;
     object-fit: cover;
+    Text-align: center;
 	
 }
 .img-container{
