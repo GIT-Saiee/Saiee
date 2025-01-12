@@ -1,5 +1,9 @@
 
-
+* {
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
 
 
@@ -12,15 +16,19 @@ body{
     background-color: wheat;
 }
 .sketch-img{
-    width:500px;
-    height:500px;
-    border-radius:5px;
-    background-size: fit;
-    background-position: center;
-    box-sizing: content-box;
-    object-fit: contain;
-    object-fit: cover;
-    Text-align:center
+    // width:500px;
+     height:auto;
+     border-radius:5px;
+     background-size: fit;
+     background-position: center;
+     box-sizing: content-box;
+     object-fit: contain;
+   //  object-fit: cover;
+     Text-align:center
+     max-width: 100%;
+     padding-top: 5%; 
+
+
 }
 .slider-container{
     position: relative;
@@ -37,6 +45,13 @@ body{
 .img-container{
     display: flex;
     transition: transform 0.4s ease-in-out;
+
+    flex-direction: row;
+    height: 100%;
+    position: absolute;
+    font-size: 0;
+    background-color: lightgreen;
+    overflow: hidden;
 }
 
 
