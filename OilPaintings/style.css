@@ -16,7 +16,7 @@ body{
      background-size: fit;
      background-position: center;
      box-sizing: content-box;
-     object-fit: contain;
+    // object-fit: contain;
      object-fit: cover;
      Text-align:center
      padding-top: 100%; 
@@ -28,7 +28,7 @@ body{
     overflow: hidden  ;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    object-fit: contain;
+  //  object-fit: contain;
     object-fit: cover;
     Text-align: center;
 	
