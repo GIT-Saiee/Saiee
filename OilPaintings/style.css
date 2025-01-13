@@ -19,9 +19,7 @@ body{
      object-fit: contain;
      object-fit: cover;
      Text-align:center
-     padding-top: 5%; 
-
-
+     padding-top: 100%; 
 }
 .slider-container{
     position: relative;
