@@ -784,7 +784,9 @@ body.light-theme{
     }
 
     .older-posts-article-image-wrapper{
+        object-fit: contain;
         height: auto;
+        min-width: fit-content;
     }
 
     .blog-post-data img{
