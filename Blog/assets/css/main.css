@@ -336,6 +336,7 @@ body.light-theme{
     min-height: var(--item-min-height-md);
 }
 
+
 .article-image{
     position: absolute;
     width: 100%;
@@ -345,6 +346,7 @@ body.light-theme{
 }
 
 .article-category{
+    flex-shrink: 0;
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -411,48 +413,12 @@ body.light-theme{
     padding: 2.5rem;
 }
 
-.trending-news-box{
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
-    padding-block: 2rem;
-    border-bottom: 1px solid var(--transparent-light-color);
-}
 
-.trending-news-box:last-of-type{
-    border-bottom: none;
-}
 
 .featured-content-title{
     font-size: var(--font-size-md);
     text-align: center;
     padding: 1rem;
-}
-
-.trending-news-img-box{
-    position: relative;
-    width: 100%;
-    height: var(--item-min-height-sm);
-}
-
-.trending-number{
-    position: absolute;
-    top: -1rem;
-    left: -1rem;
-    z-index: 15;
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--secondary-background-color);
-    color: var(--light-color);
-    border-radius: 50%;
-}
-
-.trending-news-data .article-title{
-    font-size: var(--font-size-sm);
-}
-
-.trending-news-box:hover .article-title{
-    color: var(--light-color-alt);
 }
 
 /* Quick read */
@@ -656,7 +622,7 @@ body.light-theme{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-block: 2.5rem;
+    padding-block: .5rem;
 }
 
 .blog-post-title{
@@ -669,7 +635,8 @@ body.light-theme{
 
 .blog-post-data img{
     width: 100%;
-    height: var(--item-min-height-sm);
+    /* height: var(--item-min-height-sm); */
+    height: 75rem;
     object-fit: cover;
     object-position: center 10%;
 }
@@ -821,7 +788,8 @@ body.light-theme{
     }
 
     .blog-post-data img{
-        height: var(--item-min-height-md);;
+        /* height: var(--item-min-height-md);; */
+        height: 75rem;
     }
 }
 
@@ -892,7 +860,8 @@ body.light-theme{
     }
 
     .blog-post-data img{
-        height: 40rem;
+        height:75rem;
+        object-fit: contain;
     }
 }
 
