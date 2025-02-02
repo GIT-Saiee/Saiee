@@ -5,11 +5,13 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<title>Sticky Navbar</title>
     	<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 
 	<body>
 		<div class="navbar">
-			<a href="index.html"><img src="BackDrops/logo.svg"></a>
+			<div id="nav-placeholder"></div>
+	<!--	<a href="index.html"><img src="BackDrops/logo.svg"></a>
 			<div class="dropdown1" id="dropdown1">
 				<button class="dropbtn"><img src="BackDrops/home.png" alt=""> Home</button>
 				<div class="dropdown1-content">
@@ -25,20 +27,25 @@
 
 			</div>
 			<div class="dropdown2"id="dropdown2">
-				<!--<a href="Blog/Comple
-ted/index.html" style="opacity: 50;">Blog</a>-->
-				<!--<button class="dropbtn">Blog</button>-->
+				
 				<button class="dropbtn" onclick="document.location='Blog/index.html'">Blog</button>
 			</div>
 			<div class="dropdown3"id="dropdown3">
-				<!--<button class="dropbtn">Contact</button>-->
 				<button class="dropbtn" onclick="document.location='contact.html'">Contact</button>
 
-			</div>
+			</div>-->
 		</div>
+
+
 		<div class="container">
        
 		</div>
+
+		<script>
+			$.get("navigation.html", function(data){
+				$("#nav-placeholder").replaceWith(data);
+			});
+		</script> 
 		
 		<div class="clock">
 			<div>
@@ -59,7 +66,7 @@ ted/index.html" style="opacity: 50;">Blog</a>-->
 		</div>
 		
 
-		<script src="index.js"></script>
+		<script src="index.js"></script> 
 	</body>
 </html>
 

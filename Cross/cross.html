@@ -1,7 +1,18 @@
 <html>
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <body>
+	<div class="navbar">
+		<div id="nav-placeholder"></div>
+	</div>
+		
+		  <script>
+			$.get("../navigation.html", function(data){
+			  $("#nav-placeholder").replaceWith(data);
+			});
+		  </script> 
 	<h1 class="text-decorate">Cross Stiches</h1>
 	<div class="main-container">
 	<a href="#"><img class="small-size" src="images/Meditative_Krishna.jpg" alt ="Krishna in Meditation"></a>

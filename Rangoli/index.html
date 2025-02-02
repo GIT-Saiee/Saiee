@@ -6,68 +6,32 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css">
    <link rel="stylesheet" href="index.css">
+   <link rel="stylesheet" href="style_nav.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <!-- Linking Google Fonts for Icons -->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
    </head>
  
   
   <body>
-    <!-- <div id="vid-div">
-      <video id ="video" width="600" height="400" controls>
-      <source src="flower.mov" type="video/mp4">
-      </video>
-     </div> -->
-      <!--Header Navigation Bar-->
+
+      <div id="nav-placeholder"></div>
   
-  <div class="nav-bar2" id="nav-bar" class="active">
-    <a href="index.html"><img src="images/icon.png" class="logo"></a>
-    <!--First Drop Down in nav-bar-->
-    <div class="dropdown">
-      <button class="dropbtn" onclick="myFunction1()">Designs
-        <i class="fa fa-caret-down"></i>
-      </button>
     
-      <div class="dropdown-content" id="myDropdown1">
-        <a href="designs/about.html"> About Muggulu </a>
-        <a href="designs/melika.html">Sikku Kolam / Melika Muggulu</a>
-        <a href="designs/chukka.html">Pulli Kolam / Chukkala Muggulu</a>
-        <a href="designs/geetha.html">Padi Kolam / Geethala Muggulu</a>
-        <a href="designs/sandhu.html">Idai Pulli Kolam / Sandhu Chukka Muggulu</a>
-      </div>
-
-    </div> 
-     <!--Second Drop Down in nav-bar-->
-    <div class="dropdown">
-      <button class="dropbtn" onclick="myFunction2()">How To Draw
-        <i class="fa fa-caret-down" ></i>
-      </button>
-      <div class="dropdown-content"id="myDropdown2">
-        <a href="draw/Melikas/index.html">Melikas</a>
-        <a href="draw/Chukkas/index.html">Chukkas</a>
-        <a href="draw/Geethas/index.html">Geethas</a>
-        <a href="draw/Sandhus/index.html">Sandhus</a>
-      </div>
-    </div> 
-     <!--Third Drop Down in nav-bar-->
-    <div class="dropdown">
-      <button class="dropbtn" onclick="myFunction3()">Occassions
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content"id="myDropdown3">
-        <a href="occassions/ratham.html">RathaSapthami</a>
-        <a href="Ugadhi.html">Ugadhi</a>
-        <a href="Raama.html">RaamaNavami</a>
-        <a href="occassions/lakshmi.html">Lakshmi Pooja_1</a>
-        <a href="occassions/lakshmi_1.html">Lakshmi Pooja_2</a>
-      </div>
-    </div> 
-
-  </div>
+      <script>
+        $.get("../navigation.html", function(data){
+          $("#nav-placeholder").replaceWith(data);
+        });
+      </script> 
+  
+ 
 
   <div class="muggu-container">
    <a href="designs/melika.html"> <img src="images/melika.png" alt="" title="melika"></a>
    <a href="designs/geetha.html"><img src="images/padi.png" alt="" title="padi"></a>
    <a href="designs/chukka.html"><img src="images/chukka.png" alt="" title="chukka"></a>
    <a href="designs/sandhu.html"><img src="images/sandhu.png" alt="" title="sandhu"></a>
-  </div>
+  </div> 
   <script src="index.js"></script>  
   </body> 
 

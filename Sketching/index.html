@@ -5,8 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Z-Index Effect</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+  <div class="navbar">
+    <div id="nav-placeholder"></div>
+  </div>
+
+  <script>
+    $.get("../navigation.html", function(data){
+      $("#nav-placeholder").replaceWith(data);
+    });
+  </script> 
 
   <div class="image-container">
     <img src="Images/Gitacharya.jpg" class="floating-image" alt="Image 1">
@@ -18,6 +29,8 @@
     <img src="Images/Gayatri_2.png" class="floating-image" alt="Image 7">
   </div>
 
+
   <script src="index.js"></script>
+
 </body>
 </html>

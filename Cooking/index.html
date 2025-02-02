@@ -6,9 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cooking</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="main-container">
+        <div class="navbar">
+            <div id="nav-placeholder"></div>
+          </div>
+        
+          <script>
+            $.get("../navigation.html", function(data){
+              $("#nav-placeholder").replaceWith(data);
+            });
+            </script>
         <div class="grid-item1"><a href="veggies/"><img class="image" src="wholefoods/veggies.png" title="Vegetables"></a></div>
         <div class="grid-item2"><a href="legumes/"><img class="image" src="wholefoods/legumes.png" title="Legumes"></a></div>
         <div class="grid-item3"><a href="dairy/index.html"><img class="image" src="wholefoods/milk.png" title="Dairy"></a></div>  
