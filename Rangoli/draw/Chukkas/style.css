@@ -4,15 +4,17 @@ body{
     grid-template-rows: 85px 85px 220px;
     height:100vh;
     background-color:white; 
-    margin-left: 0%;
-    margin-top: 50%;
+    margin-left: 10%;
+    margin-top: 10%;
    background-color: orange;
   }
   .main-container{
     display:grid;
     grid-template-rows: auto auto auto;
-    align-items: center;
-    justify-content:center;
+    align-items: left;
+    justify-content:left;
+    padding-left: 20%;
+    padding-top: 10%;
   }
    .container1,.container2,.container3 {
     display: grid;
@@ -20,13 +22,7 @@ body{
     grid-template-rows: 85px 85px 220px; 
     align-items: end;
     justify-content:left;
-    
-    
-}
-
-
-  
-
+  }
 .grid-item4 {
     /* background-color:rgb(180, 212, 22); */
    grid-row-start: 2;
