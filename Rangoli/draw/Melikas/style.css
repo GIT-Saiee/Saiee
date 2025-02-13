@@ -10,7 +10,7 @@ body{
   }
   .main-container{
     display:grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
     align-items: left;
     justify-content:left;
     padding-left: 20%;
@@ -18,7 +18,7 @@ body{
   }
    .container1,.container2,.container3 {
     display: grid;
-    grid-template-columns: 55px 60px 50px;
+    grid-template-columns: 55px 60px 50px 55px 60px 80px 55px 60px 50px 55px;
     grid-template-rows: 85px 85px 220px; 
     align-items: end;
     justify-content:left;
@@ -29,7 +29,7 @@ body{
 
   
 
-.grid-item4 {
+.grid-item11 {
     /* background-color:rgb(180, 212, 22); */
    grid-row-start: 2;
     grid-row-end: 3;
