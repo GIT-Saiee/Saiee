@@ -15,7 +15,7 @@ const containerHeight = window.innerHeight;
 // Function to generate a random position within the container
 function getRandomPosition(image) {
   const maxLeft = containerWidth/2 - image.clientWidth/2;// Limit to half of the container width
-  const maxTop = containerHeight/2 - image.clientHeight/2;// Limit to half of the container height
+  const maxTop = containerHeight /2- image.clientHeight/2;// Limit to half of the container height
   const randomLeft = Math.floor(Math.random() * maxLeft) + (containerWidth / 4);// Add offset for centralizing
   const randomTop = Math.floor(Math.random() * maxTop) + (containerHeight / 4);// Add offset for centralizing
   return { left: randomLeft, top: randomTop };

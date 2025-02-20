@@ -1,7 +1,10 @@
 .main-container{
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    padding:150px;
     height:100vh;
     justify-content: center;
+  }
+  h1{
+    align-items: center;
   }
