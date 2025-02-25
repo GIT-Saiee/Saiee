@@ -499,6 +499,10 @@ body.light-theme{
 
 .see-more-btn{
     text-transform: uppercase;
+    color:rgba(243, 248, 248, 0.877);
+    font-size: 25px;
+    font-weight: bold;
+    
 }
 
 .see-more-btn:hover{
@@ -507,10 +511,12 @@ body.light-theme{
 
 .see-more-btn i{
     transition: transform .25s;
+  
 }
 
 .see-more-btn:hover i{
     transform: translateX(.5rem);
+    color: greenyellow;
 }
 
 /* Popular tags */
