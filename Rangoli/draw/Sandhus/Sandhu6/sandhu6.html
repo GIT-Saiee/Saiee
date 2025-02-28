@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chukka Muggulu</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="Melika.css"> -->
    <!-- <link href="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/src/Style/stPageFlip.min.css" rel="stylesheet">  -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -18,6 +19,18 @@
         </div>
         <h5 align="center">15 X 8 dots in between space</h5>
     </div>
+    <hr>
+
+    <div id="comment-placeholder">
+      <script>const issueNumber = 1; // Change to your issue number</script>
+    </div>
+  
+    
+      <script>
+        $.get("../comments.html", function(data){
+          $("#comment-placeholder").replaceWith(data);
+        });
+      </script> 
    
 </div>
 </body>

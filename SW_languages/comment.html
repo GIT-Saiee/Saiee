@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Comment Section</title>
+<style>
+  .comment {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .comment-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+  <h2>Comments</h2>
+  <div id="comments-container"></div>
+
+  <h3>Add a Comment</h3>
+  <input type="text" id="author-input" placeholder="Your Name" class="comment-author">
+  <textarea id="comment-input" placeholder="Your Comment" class="comment"></textarea>
+  <button onclick="addComment()">Post Comment</button>
+
+  <script>
+    function addComment() {
+      const author = document.getElementById('author-input').value;
+      const commentText = document.getElementById('comment-input').value;
+      if (author && commentText) {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+
+        const authorDiv = document.createElement('div');
+        authorDiv.classList.add('comment-author');
+        authorDiv.textContent = author;
+
+        const textDiv = document.createElement('div');
+        textDiv.textContent = commentText;
+
+        commentDiv.appendChild(authorDiv);
+        commentDiv.appendChild(textDiv);
+
+        document.getElementById('comments-container').appendChild(commentDiv);
+        document.getElementById('author-input').value = '';
+        document.getElementById('comment-input').value = '';
+      } else {
+        alert('Please enter your name and comment.');
+      }
+    }
+  </script>
+</body>
+</html>

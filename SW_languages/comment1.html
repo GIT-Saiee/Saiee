@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Simple Comment System</title>
+ <style>
+ .comment {
+ border: 1px solid #ccc;
+ margin-bottom: 10px;
+ padding: 10px;
+ }
+ </style>
+</head>
+<body>
+ <h1>Comment Section</h1>
+
+
+ <div id="comments-container">
+ <!-- Comments will be displayed here -->
+ </div>
+
+
+ <textarea id="comment-input" placeholder="Write your comment here" class="comment"></textarea><br>
+ <button onclick="addComment()">Post Comment</button>
+
+
+ <script>
+ const commentsContainer = document.getElementById('comments-container');
+ const commentInput = document.getElementById('comment-input');
+ let comments = [];
+
+
+ // Function to display comments
+ function displayComments() {
+ commentsContainer.innerHTML = '';
+ comments.forEach((comment, index) => {
+ const commentDiv = document.createElement('div');
+ commentDiv.classList.add('comment');
+ commentDiv.innerHTML = `
+ <p>${comment}</p>
+ <button onclick="deleteComment(${index})">Delete</button>
+ `;
+ commentsContainer.appendChild(commentDiv);
+ });
+ }
+
+
+ // Function to add a comment
+ function addComment() {
+ const newComment = commentInput.value.trim();
+ if (newComment !== '') {
+ comments.push(newComment);
+ commentInput.value = '';
+ displayComments();
+ }
+ }
+
+
+ // Function to delete a comment
+ function deleteComment(index) {
+ comments.splice(index, 1);
+ displayComments();
+ }
+
+
+ // Initial display of comments (if any)
+ displayComments();
+ </script>
+</body>
+</html>
