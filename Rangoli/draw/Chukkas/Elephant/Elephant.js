@@ -1,4 +1,4 @@
-import {PageFlip} from "./page-flip.module.js";
+import {PageFlip} from "../page-flip.module.js";
 document.addEventListener('DOMContentLoaded', function() {
 
    const pageFlip1 = new PageFlip(

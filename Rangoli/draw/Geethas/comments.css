@@ -1,0 +1,62 @@
+.main-container{
+    
+    padding: 180px;
+}
+ 
+  .comment-section{
+    display : grid;
+    grid-row: auto auto auto;
+    grid-column: auto;
+    gap:10px;
+  }
+  .grid-item1{
+    padding: 20px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border-radius: 10px;
+  }
+
+  .author{
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .grid-item2{
+    padding: 20px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border-radius: 10px;
+  }
+  .input-text {
+    width: 100%;
+    max-width: 500px;
+    height: 150px;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+/* Add focus effect */
+.input-text:focus {
+    border-color: #2E7D32;
+    outline: none;
+}
+
+.button {
+  width: 10%;
+  padding: 15px 0;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #c82333;
+}
+
