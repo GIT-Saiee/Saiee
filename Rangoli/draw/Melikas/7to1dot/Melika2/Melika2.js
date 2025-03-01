@@ -1,4 +1,4 @@
- import {PageFlip} from "./page-flip.module.js";
+ import {PageFlip} from "../../page-flip.module.js";
  document.addEventListener('DOMContentLoaded', function() {
 
     const pageFlip1 = new PageFlip(
@@ -8,7 +8,7 @@
           height: 300, // base page height
 
           size: "stretch",
-          // set threshold values:
+          // set threshold values
           minWidth: 315,
           maxWidth: 500,
           minHeight: 420,
