@@ -1,5 +1,5 @@
-import {PageFlip} from "https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.module.min.js";
-// import {PageFlip} from "./page-flip.module.js";
+//import {PageFlip} from "https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.module.min.js";
+import {PageFlip} from "../../page-flip.module.js";
 document.addEventListener('DOMContentLoaded', function() {
 
     const pageFlip2 = new PageFlip(
@@ -23,5 +23,5 @@ document.addEventListener('DOMContentLoaded', function() {
    
      
  
- pageFlip2.loadFromImages(['../images/melika1/10.jpg','../images/melika1/1.jpg', '../images/melika1/2.jpg','../images/melika1/3.jpg','../images/melika1/4.jpg', '../images/melika1/5.jpg','../images/melika1/6.jpg','../images/melika1/7.jpg', '../images/melika1/8.jpg','../images/melika1/9.jpg','../images/melika1/10.jpg']);
+ pageFlip2.loadFromImages(['images/melika1/10.jpg','images/melika1/1.jpg', 'images/melika1/2.jpg','images/melika1/3.jpg','images/melika1/4.jpg', 'images/melika1/5.jpg','images/melika1/6.jpg','images/melika1/7.jpg', 'images/melika1/8.jpg','images/melika1/9.jpg','images/melika1/10.jpg']);
     }); 

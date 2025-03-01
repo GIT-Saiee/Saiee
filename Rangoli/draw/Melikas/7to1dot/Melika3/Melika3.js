@@ -1,4 +1,4 @@
- import {PageFlip} from "./page-flip.module.js";
+ import {PageFlip} from "../../page-flip.module.js";
  document.addEventListener('DOMContentLoaded', function() {
 
     const pageFlip1 = new PageFlip(
@@ -19,5 +19,5 @@
           mobileScrollSupport: false // disable content scrolling on mobile devices
       }
   );
-  pageFlip1.loadFromImages(['../images/melika3/8.jpg','../images/melika3/1.jpg', '../images/melika3/2.jpg','../images/melika3/3.jpg','../images/melika3/4.jpg','../images/melika3/5.jpg','../images/melika3/6.jpg','../images/melika3/7.jpg','../images/melika3/8.jpg']);
+  pageFlip1.loadFromImages(['images/melika3/8.jpg','images/melika3/1.jpg', 'images/melika3/2.jpg','images/melika3/3.jpg','images/melika3/4.jpg','images/melika3/5.jpg','images/melika3/6.jpg','images/melika3/7.jpg','images/melika3/8.jpg']);
 });

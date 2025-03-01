@@ -19,5 +19,5 @@
           mobileScrollSupport: false // disable content scrolling on mobile devices
       }
   );
-  pageFlip1.loadFromImages(['../images/melika2/m5.png','../images/melika2/m1.png', '../images/melika2/m2.png','../images/melika2/m3.png','../images/melika2/m4.png','../images/melika2/m5.png']);
+  pageFlip1.loadFromImages(['images/melika2/m5.png','images/melika2/m1.png', 'images/melika2/m2.png','images/melika2/m3.png','images/melika2/m4.png','images/melika2/m5.png']);
 });

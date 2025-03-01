@@ -1,5 +1,5 @@
-import {PageFlip} from "https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.module.min.js";
-// import {PageFlip} from "./page-flip.module.js";
+//import {PageFlip} from "https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.module.min.js";
+import {PageFlip} from "../../page-flip.module.js";
 document.addEventListener('DOMContentLoaded', function() {
 
     const pageFlip2 = new PageFlip(
@@ -23,5 +23,5 @@ document.addEventListener('DOMContentLoaded', function() {
    
      
  
- pageFlip2.loadFromImages(['../images/melika4/8.jpg','../images/melika4/1.jpg', '../images/melika4/2.jpg','../images/melika4/3.jpg','../images/melika4/4.jpg', '../images/melika4/5.jpg','../images/melika4/6.jpg','../images/melika4/7.jpg', '../images/melika4/8.jpg']);
+ pageFlip2.loadFromImages(['images/melika4/8.jpg','images/melika4/1.jpg', 'images/melika4/2.jpg','images/melika4/3.jpg','images/melika4/4.jpg', 'images/melika4/5.jpg','images/melika4/6.jpg','images/melika4/7.jpg', 'images/melika4/8.jpg']);
     }); 
