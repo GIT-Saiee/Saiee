@@ -9,7 +9,7 @@
     <script>
         const repo = 'GIT-Saiee/Saiee'; // Change this
         
-        const token = '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'; // Required for posting comments (optional for reading)
+        const token = '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'; // Required for posting comments (optional for reading)
 
         async function loadComments() {
             const response = await fetch(`https://api.github.com/repos/${repo}/issues/${issueNumber}/comments`);
@@ -41,7 +41,9 @@
 
             // Process the last comment separately
             const lastComment = processedComments[processedComments.length - 1];
-            document.getElementById('lastComment').innerHTML = `Last comment: ${lastComment}`;
+            if (lastComment != null){
+                 document.getElementById('lastComment').innerHTML = `Last comment: ${lastComment}`;
+            }
             // Display cleaned comments (without usernames)
           //  document.getElementById('commentList').innerHTML = cleanedComments.map(c => `<li>${c}</li>`).join('');
 
@@ -67,7 +69,7 @@
                 });
 
                 document.getElementById('commentInput').value = '';
-                document.getElementById('author-Input').value = ''
+                document.getElementById('author-input').value = '';
                 loadComments();
             }
             else {
@@ -79,3 +81,5 @@
 
 </script>
     
+
+
