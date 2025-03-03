@@ -41,7 +41,9 @@
 
             // Process the last comment separately
             const lastComment = processedComments[processedComments.length - 1];
-            document.getElementById('lastComment').innerHTML = `Last comment: ${lastComment}`;
+            if (lastComment != null){
+                 document.getElementById('lastComment').innerHTML = `Last comment: ${lastComment}`;
+            }
             // Display cleaned comments (without usernames)
           //  document.getElementById('commentList').innerHTML = cleanedComments.map(c => `<li>${c}</li>`).join('');
 
