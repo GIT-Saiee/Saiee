@@ -111,45 +111,147 @@ function getComments(pageId) {
 }
 
 // Example usage
+// document.addEventListener('DOMContentLoaded', () => {
+// //  const pageId = window.location.pathname; // Use page URL as ID
+// var pageId;
+// if (window.parent !== window) {
+//   let parentUrl = window.parent.location;
+//   pageId = parentUrl.pathname;
+// }
+//  const commentForm = document.getElementById('comment-form');
+//  const commentsContainer = document.getElementById('comments-container');
+ 
+//  // Load existing comments
+//  getComments(pageId).then(comments => {
+//    comments.forEach(comment => {
+//      const commentEl = document.createElement('div');
+//      commentEl.classList.add('comment');
+//      commentEl.innerHTML = `
+//        <p class="author">${comment.author}</p>
+//        <p class="content">${comment.content}</p>
+//        <p class="timestamp">${comment.timestamp?.toDate().toLocaleString() || 'Just now'}</p>
+//        <br>
+//      `;
+//      commentsContainer.appendChild(commentEl);
+//    });
+  
+//  });
+ 
+//  // Handle form submission
+//  commentForm.addEventListener('submit', (e) => {
+//    e.preventDefault();
+//    const author = document.getElementById('author').value;
+//    const content = document.getElementById('content').value;
+   
+//    saveComment(pageId, author, content).then(() => {
+//      document.getElementById('author').value = '';
+//      document.getElementById('content').value = '';
+//     //  alert('Comment saved successfully!');
+     
+//      // Reload comments or append the new comment to the list
+//      getComments(pageId);
+//    });
+//  });
+// }); 
+
+
 document.addEventListener('DOMContentLoaded', () => {
-//  const pageId = window.location.pathname; // Use page URL as ID
-var pageId;
-if (window.parent !== window) {
+  var pageId;
+  //const pageId = window.location.pathname; // Use page URL as ID
+  if (window.parent !== window) {
   let parentUrl = window.parent.location;
   pageId = parentUrl.pathname;
 }
- const commentForm = document.getElementById('comment-form');
- const commentsContainer = document.getElementById('comments-container');
- 
- // Load existing comments
- getComments(pageId).then(comments => {
-   comments.forEach(comment => {
-     const commentEl = document.createElement('div');
-     commentEl.classList.add('comment');
-     commentEl.innerHTML = `
-       <p class="author">${comment.author}</p>
-       <p class="content">${comment.content}</p>
-       <p class="timestamp">${comment.timestamp?.toDate().toLocaleString() || 'Just now'}</p>
-       <br>
-     `;
-     commentsContainer.appendChild(commentEl);
-   });
- });
- 
- // Handle form submission
- commentForm.addEventListener('submit', (e) => {
-   e.preventDefault();
-   const author = document.getElementById('author').value;
-   const content = document.getElementById('content').value;
-   
-   saveComment(pageId, author, content).then(() => {
-     document.getElementById('author').value = '';
-     document.getElementById('content').value = '';
-    //  alert('Comment saved successfully!');
-     getComments(pageId)
-     // Reload comments or append the new comment to the list
-   });
- });
+  const commentForm = document.getElementById('comment-form');
+  const commentsContainer = document.getElementById('comments-container');
+  
+  // Function to render a single comment
+  function renderComment(comment) {
+    const commentEl = document.createElement('div');
+    commentEl.classList.add('comment');
+    commentEl.innerHTML = `
+      <p class="author">${comment.author}</p>
+      <p class="content">${comment.content}</p>
+      <p class="timestamp">${comment.timestamp?.toDate ? comment.timestamp.toDate().toLocaleString() : 'Just now'}</p>
+    `;
+    return commentEl;
+  }
+
+  // Function to load comments
+  function loadComments() {
+    getComments(pageId).then(comments => {
+      // Clear existing comments
+      commentsContainer.innerHTML = '';
+      
+      // Add each comment to the container
+      comments.forEach(comment => {
+        const commentEl = renderComment(comment);
+        commentsContainer.appendChild(commentEl);
+      });
+    }).catch(error => {
+      console.error('Error loading comments:', error);
+      commentsContainer.innerHTML = '<p>Unable to load comments</p>';
+    });
+  }
+
+  // Initial load of comments
+  loadComments();
+  
+  // Handle form submission
+  commentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const authorInput = document.getElementById('author');
+    const contentInput = document.getElementById('content');
+    
+    const author = authorInput.value.trim();
+    const content = contentInput.value.trim();
+    
+    if (!author || !content) {
+      alert('Please enter both name and comment');
+      return;
+    }
+    
+    // Disable form during submission
+    const submitButton = commentForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Posting...';
+    
+    saveComment(pageId, author, content)
+      .then((newCommentRef) => {
+        // Create a new comment element to append immediately
+        const newComment = {
+          id: newCommentRef.id,
+          author: author,
+          content: content,
+          timestamp: { toDate: () => new Date() } // Temporary timestamp
+        };
+        
+        // Prepend the new comment to the container
+        const newCommentEl = renderComment(newComment);
+        if (commentsContainer.firstChild) {
+          commentsContainer.insertBefore(newCommentEl, commentsContainer.firstChild);
+        } else {
+          commentsContainer.appendChild(newCommentEl);
+        }
+        
+        // Reset form
+        authorInput.value = '';
+        contentInput.value = '';
+        
+        // Optional: Reload full comments to ensure server-side timestamp
+        loadComments();
+      })
+      .catch((error) => {
+        console.error('Error saving comment:', error);
+        alert('Failed to post comment. Please try again.');
+      })
+      .finally(() => {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.textContent = 'Post Comment';
+      });
+  });
 });
+
 
 </script>
