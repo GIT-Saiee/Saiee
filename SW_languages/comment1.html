@@ -12,58 +12,123 @@
 </head>
 <body>
  <h1>Comment Section</h1>
+ <div id="comments-section">
+    <form id="comment-form">
+      <h3>Leave a comment</h3>
+      <div>
+        <label for="author">Name:</label>
+        <input type="text" id="author" required>
+      </div>
+      <div>
+        <label for="content">Comment:</label>
+        <textarea id="content" required></textarea>
+      </div>
+      <button type="submit">Post Comment</button>
+    </form>
+    
+    <div id="comments-container">
+      <!-- Comments will be loaded here -->
+    </div>
+  </div>
 
+ <!-- <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script> -->
+ 
+ <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+   // import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+   import { getFirestore, collection, query, where, orderBy, getDocs,addDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+   //import { initializeApp } from "firebase/app";
+   //import { getFirestore } from "firebase/firestore";
+    const firebaseConfig = {
+    apiKey: "AIzaSyCX0hkBPfb_T-dKnwZ0_nB_F0mo3YjrkYk",
+    authDomain: "comments-15129.firebaseapp.com",
+    projectId: "comments-15129",
+    storageBucket: "comments-15129.firebasestorage.app",
+    messagingSenderId: "992182887918",
+    appId: "1:992182887918:web:3fe6c0e380ed1f574b5aff",
+    measurementId: "G-F4YWHJBNPF"
+  };
 
- <div id="comments-container">
- <!-- Comments will be displayed here -->
- </div>
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  console.log("firebase initialized successfully!")
+  // Save a new comment
+  async function saveComment(pageId, author, content) {
+  try {
+    const docRef = await addDoc(collection(db, "comments"), {
+      pageId: pageId,
+      author: author,
+      content: content,
+      timestamp: new Date()
+    });
+    console.log("Comment saved with ID:", docRef.id);
+    return docRef;
+  } catch (error) {
+    console.error("Error saving comment:", error);
+    throw error;
+  }
+}
 
+// Get comments for a specific page
+function getComments(pageId) {
+    const commentsRef = collection(db, 'comments');
+  const q = query(
+    commentsRef, 
+    where('pageId', '==', pageId),
+    orderBy('timestamp', 'desc')
+  );
+  
+  return getDocs(q).then((snapshot) => {
+    const comments = [];
+    snapshot.forEach((doc) => {
+      comments.push({
+        id: doc.id,
+        ...doc.data()
+      });
+    });
+    return comments;
+  });
+}
 
- <textarea id="comment-input" placeholder="Write your comment here" class="comment"></textarea><br>
- <button onclick="addComment()">Post Comment</button>
-
-
- <script>
- const commentsContainer = document.getElementById('comments-container');
- const commentInput = document.getElementById('comment-input');
- let comments = [];
-
-
- // Function to display comments
- function displayComments() {
- commentsContainer.innerHTML = '';
- comments.forEach((comment, index) => {
- const commentDiv = document.createElement('div');
- commentDiv.classList.add('comment');
- commentDiv.innerHTML = `
- <p>${comment}</p>
- <button onclick="deleteComment(${index})">Delete</button>
- `;
- commentsContainer.appendChild(commentDiv);
- });
- }
-
-
- // Function to add a comment
- function addComment() {
- const newComment = commentInput.value.trim();
- if (newComment !== '') {
- comments.push(newComment);
- commentInput.value = '';
- displayComments();
- }
- }
-
-
- // Function to delete a comment
- function deleteComment(index) {
- comments.splice(index, 1);
- displayComments();
- }
-
-
- // Initial display of comments (if any)
- displayComments();
- </script>
+// Example usage
+document.addEventListener('DOMContentLoaded', () => {
+  const pageId = window.location.pathname; // Use page URL as ID
+  alert(pageId);
+  console.log("sai pageId: " + pageId);
+  const commentForm = document.getElementById('comment-form');
+  const commentsContainer = document.getElementById('comments-container');
+  
+  // Load existing comments
+  getComments(pageId).then(comments => {
+    comments.forEach(comment => {
+      const commentEl = document.createElement('div');
+      commentEl.classList.add('comment');
+      commentEl.innerHTML = `
+        <p class="author">${comment.author}</p>
+        <p class="content">${comment.content}</p>
+        <p class="timestamp">${comment.timestamp?.toDate().toLocaleString() || 'Just now'}</p>
+      `;
+      commentsContainer.appendChild(commentEl);
+    });
+  });
+  
+  // Handle form submission
+  commentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const author = document.getElementById('author').value;
+    const content = document.getElementById('content').value;
+    
+    saveComment(pageId, author, content).then(() => {
+      document.getElementById('author').value = '';
+      document.getElementById('content').value = '';
+      alert('Comment saved successfully!');
+      // Reload comments or append the new comment to the list
+    });
+  });
+});
+</script>
 </body>
 </html>

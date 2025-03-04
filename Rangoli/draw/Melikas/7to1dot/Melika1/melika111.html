@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melika Muggulu</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="Melika.css"> -->
+   <!-- <link href="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/src/Style/stPageFlip.min.css" rel="stylesheet">  -->
+   <!--<link rel="stylesheet" href="../../style1.css">-->
+</head>
+
+<body>
+   <div class="main-container">
+    <div class="container">
+        <h1 align="center"> Click/Flip the book to see instructions</h1>
+        <div class="flip-book" id="demoBookExample1">
+        </div>
+        <hr>
+        <div id="comment-placeholder">
+           
+          </div>
+        
+          
+          <h1>Comment Section</h1>
+          <div id="comments-section">
+             <form id="comment-form">
+               <h3>Leave a comment</h3>
+               <div class="author">
+                 <label for="author">Name:</label>
+                 <input type="text" id="author" required>
+               </div>
+               <div class="comment">
+                 <label for="content">Comment:</label>
+                 <textarea id="content" required></textarea>
+               </div>
+               <button type="submit">Post Comment</button>
+             </form>
+             <div id="comments-container">
+              <!-- Comments will be loaded here -->
+            </div>
+          </div>
+            
+          
+          <!-- <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script> -->
+          
+          <script type="module">
+             // Import the functions you need from the SDKs you need
+             import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+            // import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+            import { getFirestore, collection, query, where, orderBy, getDocs,addDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+            //import { initializeApp } from "firebase/app";
+            //import { getFirestore } from "firebase/firestore";
+             const firebaseConfig = {
+             apiKey: "AIzaSyCX0hkBPfb_T-dKnwZ0_nB_F0mo3YjrkYk",
+             authDomain: "comments-15129.firebaseapp.com",
+             projectId: "comments-15129",
+             storageBucket: "comments-15129.firebasestorage.app",
+             messagingSenderId: "992182887918",
+             appId: "1:992182887918:web:3fe6c0e380ed1f574b5aff",
+             measurementId: "G-F4YWHJBNPF"
+           };
+          
+           // Initialize Firebase
+           const app = initializeApp(firebaseConfig);
+           const db = getFirestore(app);
+           console.log("sai...firebase initialized successfully!")
+           // Save a new comment
+           async function saveComment(pageId, author, content) {
+            console.log("sai: pageId=", pageId)
+           try {
+             const docRef = await addDoc(collection(db, "comments"), {
+               pageId: pageId,
+               author: author,
+               content: content,
+               timestamp: new Date()
+             });
+             console.log("Comment saved with ID:", docRef.id);
+             return docRef;
+           } catch (error) {
+             console.error("Error saving comment:", error);
+             throw error;
+           }
+          }
+          
+          // async function saveComment(pageId, author, content) {
+          //   try {
+          //     const commentsRef = collection(db, "comments");
+          
+          //     // Query Firestore for existing documents with the same pageId
+          //     const q = query(commentsRef, where("pageId", "==", pageId));
+          //     const querySnapshot = await getDocs(q);
+          
+          //     if (querySnapshot.empty) {
+          //       // If no document exists with this pageId, add a new comment
+          //       const docRef = await addDoc(commentsRef, {
+          //         pageId,
+          //         author,
+          //         content,
+          //         timestamp: new Date()
+          //       });
+          //       console.log("Comment saved with ID:", docRef.id);
+          //       return docRef;
+          //     } else {
+          //       console.log("A comment with this pageId already exists.");
+          //       return null; // Or handle this case differently
+          //     }
+          //   } catch (error) {
+          //     console.error("Error saving comment:", error);
+          //     throw error;
+          //   }
+          // }
+          
+          // Get comments for a specific page
+          function getComments(pageId) {
+             const commentsRef = collection(db, 'comments');
+           const q = query(
+             commentsRef, 
+             where('pageId', '==', pageId),
+             orderBy('timestamp', 'desc')
+           );
+           
+           return getDocs(q).then((snapshot) => {
+             const comments = [];
+             snapshot.forEach((doc) => {
+               comments.push({
+                 id: doc.id,
+                 ...doc.data()
+               });
+             });
+             return comments;
+           });
+          }
+          
+          // Example usage
+          document.addEventListener('DOMContentLoaded', () => {
+           const pageId = window.location.pathname; // Use page URL as ID
+           console.log("sai-1: pageId="+pageId);
+           alert(pageId);
+           const commentForm = document.getElementById('comment-form');
+           const commentsContainer = document.getElementById('comments-container');
+           
+           // Load existing comments
+           getComments(pageId).then(comments => {
+             comments.forEach(comment => {
+               const commentEl = document.createElement('div');
+               commentEl.classList.add('comment');
+               commentEl.innerHTML = `
+                 <p class="author">${comment.author}</p>
+                 <p class="content">${comment.content}</p>
+                 <p class="timestamp">${comment.timestamp?.toDate().toLocaleString() || 'Just now'}</p>
+               `;
+               commentsContainer.appendChild(commentEl);
+             });
+           });
+           
+           // Handle form submission
+           commentForm.addEventListener('submit', (e) => {
+             e.preventDefault();
+             const author = document.getElementById('author').value;
+             const content = document.getElementById('content').value;
+             
+             saveComment(pageId, author, content).then(() => {
+               document.getElementById('author').value = '';
+               document.getElementById('content').value = '';
+               alert('Comment saved successfully!');
+               // Reload comments or append the new comment to the list
+             });
+           });
+          });
+          </script>
+    </div>
+   
+</div>
+    <!-- <div class="muggu-container">
+        <div class="grid-item0"><a href="melika1.html"><img src="images/melika1/m8.png" alt=""></a></div>
+        
+    </div> -->
+</body>
+<script  type="module" src="Melika1.js"></script>
+</html>
