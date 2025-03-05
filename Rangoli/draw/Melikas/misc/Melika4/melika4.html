@@ -16,18 +16,38 @@
         <div class="flip-book" id="demoBookExample2">
         </div>
         <hr>
-        <div id="comment-placeholder">
-            <script>const issueNumber = 15; // Change to your issue number</script>
-          </div>
-        
-          
-            <script>
-              $.get("../../comments.html", function(data){
-                $("#comment-placeholder").replaceWith(data);
-              });
-            </script> 
+        <iframe id="commentIframe" src="../../comments.html" width="100%" style="border: none; overflow: hidden;" scrolling="no"></iframe>
     </div>
 </div>
+<script>
+  function resizeIframe() {
+    var iframe = document.getElementById("commentIframe");
+    if (iframe) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    }
+  }
+
+  // Resize when iframe loads
+  document.getElementById("commentIframe").onload = function() {
+    resizeIframe();
+  };
+
+  window.onload = function() {
+    window.parent.postMessage(
+      { type: "resize", height: document.body.scrollHeight },
+      "*"
+    );
+  }
+
+
+  window.addEventListener("message", function(event) {
+    if (event.data.type === "resize") {
+      document.getElementById("commentIframe").style.height = event.data.height + "px";
+    }
+  }, false);
+
+  
+</script>
 </body>
 <script  type="module" src="melika4.js"></script>
 </html>

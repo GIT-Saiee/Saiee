@@ -110,49 +110,6 @@ function getComments(pageId) {
  });
 }
 
-// Example usage
-// document.addEventListener('DOMContentLoaded', () => {
-// //  const pageId = window.location.pathname; // Use page URL as ID
-// var pageId;
-// if (window.parent !== window) {
-//   let parentUrl = window.parent.location;
-//   pageId = parentUrl.pathname;
-// }
-//  const commentForm = document.getElementById('comment-form');
-//  const commentsContainer = document.getElementById('comments-container');
- 
-//  // Load existing comments
-//  getComments(pageId).then(comments => {
-//    comments.forEach(comment => {
-//      const commentEl = document.createElement('div');
-//      commentEl.classList.add('comment');
-//      commentEl.innerHTML = `
-//        <p class="author">${comment.author}</p>
-//        <p class="content">${comment.content}</p>
-//        <p class="timestamp">${comment.timestamp?.toDate().toLocaleString() || 'Just now'}</p>
-//        <br>
-//      `;
-//      commentsContainer.appendChild(commentEl);
-//    });
-  
-//  });
- 
-//  // Handle form submission
-//  commentForm.addEventListener('submit', (e) => {
-//    e.preventDefault();
-//    const author = document.getElementById('author').value;
-//    const content = document.getElementById('content').value;
-   
-//    saveComment(pageId, author, content).then(() => {
-//      document.getElementById('author').value = '';
-//      document.getElementById('content').value = '';
-//     //  alert('Comment saved successfully!');
-     
-//      // Reload comments or append the new comment to the list
-//      getComments(pageId);
-//    });
-//  });
-// }); 
 
 
 document.addEventListener('DOMContentLoaded', () => {

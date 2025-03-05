@@ -17,24 +17,39 @@
         <div class="flip-book" id="demoBookExample1">
         </div>
         <hr>
-        <div id="comment-placeholder">
-            <script>const issueNumber = 7; // Change to your issue number</script>
-          </div>
-        
-          
-            <script>
-              $.get("../../comments.html", function(data){
-                $("#comment-placeholder").replaceWith(data);
-              });
-            </script> 
-        </div>
+        <iframe id="commentIframe" src="../../comments.html" width="100%" style="border: none; overflow: hidden;" scrolling="no"></iframe>
     </div>
    
 </div>
-    <!-- <div class="muggu-container">
-        <div class="grid-item0"><a href="melika1.html"><img src="images/melika1/m8.png" alt=""></a></div>
-        
-    </div> -->
+<script>
+  function resizeIframe() {
+    var iframe = document.getElementById("commentIframe");
+    if (iframe) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    }
+  }
+
+  // Resize when iframe loads
+  document.getElementById("commentIframe").onload = function() {
+    resizeIframe();
+  };
+
+  window.onload = function() {
+    window.parent.postMessage(
+      { type: "resize", height: document.body.scrollHeight },
+      "*"
+    );
+  }
+
+
+  window.addEventListener("message", function(event) {
+    if (event.data.type === "resize") {
+      document.getElementById("commentIframe").style.height = event.data.height + "px";
+    }
+  }, false);
+
+  
+</script>
 </body>
 <script  type="module" src="melika2.js"></script>
 </html>

@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandhu Muggulu</title>
-    <!-- <link rel="stylesheet" href="Melika.css"> -->
-   <!-- <link href="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/src/Style/stPageFlip.min.css" rel="stylesheet">  -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -19,19 +16,44 @@
         </div>
         <h5 align="center">15 X 8 dots in between space</h5>
         <div id="comment-placeholder">
-            <script>const issueNumber = 2; // Change to your issue number</script>
+           
           </div>
-        
+          <iframe id="commentIframe" src="../comments.html" width="100%" style="border: none; overflow: hidden;" scrolling="no"></iframe>
           
-            <script>
-              $.get("../comments.html", function(data){
-                $("#comment-placeholder").replaceWith(data);
-              });
-            </script> 
-    
+            
     </div>
    
 </div>
+<script>
+  function resizeIframe() {
+    var iframe = document.getElementById("commentIframe");
+    if (iframe) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    }
+  }
+
+  // Resize when iframe loads
+  document.getElementById("commentIframe").onload = function() {
+    resizeIframe();
+  };
+
+  window.onload = function() {
+    window.parent.postMessage(
+      { type: "resize", height: document.body.scrollHeight },
+      "*"
+    );
+  }
+
+
+  window.addEventListener("message", function(event) {
+    if (event.data.type === "resize") {
+      document.getElementById("commentIframe").style.height = event.data.height + "px";
+    }
+  }, false);
+
+  
+</script>
+
 </body>
 <script  type="module" src="sandhu5.js"></script>
 </html>
