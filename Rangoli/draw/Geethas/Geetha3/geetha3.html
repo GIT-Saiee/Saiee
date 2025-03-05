@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geetha Muggulu</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" href="Melika.css"> -->
-   <!-- <link href="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/src/Style/stPageFlip.min.css" rel="stylesheet">  -->
-    <link rel="stylesheet" href="../comments.css">
 </head>
 
 <body>
@@ -18,20 +14,40 @@
             
         </div>
         <hr>
-        <div id="comment-placeholder">
-            <script>const issueNumber = 21; // Change to your issue number</script>
-          </div>
-        
-          
-            <script>
-              $.get("../comments.html", function(data){
-                $("#comment-placeholder").replaceWith(data);
-              });
-            </script> 
+        <iframe id="commentIframe" src="../comments.html" width="100%" style="border: none; overflow: hidden;" ></iframe>
     
     </div>
    
 </div>
+<script>
+  function resizeIframe() {
+    var iframe = document.getElementById("commentIframe");
+    if (iframe) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    }
+  }
+
+  // Resize when iframe loads
+  document.getElementById("commentIframe").onload = function() {
+    resizeIframe();
+  };
+
+  window.onload = function() {
+    window.parent.postMessage(
+      { type: "resize", height: document.body.scrollHeight },
+      "*"
+    );
+  }
+
+
+  window.addEventListener("message", function(event) {
+    if (event.data.type === "resize") {
+      document.getElementById("commentIframe").style.height = event.data.height + "px";
+    }
+  }, false);
+
+  
+</script>
 </body>
 <script  type="module" src="geetha3.js"></script>
 </html>

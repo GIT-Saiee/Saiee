@@ -1,85 +1,215 @@
 
-    <h2 color="#dc3545">Comments</h2>
-    <ul id="commentList" style="list-style: none; padding: 0;"></ul>
-    <div class="comment-section">
-       <div class="grid-item1"> <input type="text" id="author-input" placeholder="Your Name" class="author"></div>
-       <div class="grid-item2"><textarea id="commentInput" placeholder="Write a comment..." class="input-text"></textarea></div>
-       <div class="grid-item3"> <button onclick="submitComment()" class="button">Submit</button></div>
-    </div>
-    <script>
-        const repo = 'GIT-Saiee/Saiee'; // Change this
+    <link rel="stylesheet" href="comments.css">
+    <h1>Comment Section</h1>
+<div id="comments-section class ="comments-section">
+   <form id="comment-form">
+     <h3>Leave a comment</h3>
+     <div class="author-name grid-item1">
+       <label for="author">Name:</label>
+       <input type="text" id="author" required>
+     </div>
+     <div class="input-text grid-item2">
+       <label for="content">Comment:</label>
+       <textarea id="content" required></textarea>
+     </div>
+     <div >
+     <button type="submit" class="button">Post Comment</button>
+     </div>
+   </form>
+   
+   <hr>
+   <div id="comments-container">
+    <!-- Comments will be loaded here -->
+  </div>
+</div>
+
+<script type="module">
+   // Import the functions you need from the SDKs you need
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+  import { getFirestore, collection, query, where, orderBy, getDocs,addDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+  //import { initializeApp } from "firebase/app";
+  //import { getFirestore } from "firebase/firestore";
+   const firebaseConfig = {
+   apiKey: "AIzaSyCX0hkBPfb_T-dKnwZ0_nB_F0mo3YjrkYk",
+   authDomain: "comments-15129.firebaseapp.com",
+   projectId: "comments-15129",
+   storageBucket: "comments-15129.firebasestorage.app",
+   messagingSenderId: "992182887918",
+   appId: "1:992182887918:web:3fe6c0e380ed1f574b5aff",
+   measurementId: "G-F4YWHJBNPF"
+ };
+
+ // Initialize Firebase
+ const app = initializeApp(firebaseConfig);
+ const db = getFirestore(app);
+ console.log("sai...firebase initialized successfully!")
+ // Save a new comment
+ async function saveComment(pageId, author, content) {
+  console.log("sai: pageId=", pageId)
+ try {
+   const docRef = await addDoc(collection(db, "comments"), {
+     pageId: pageId,
+     author: author,
+     content: content,
+     timestamp: new Date()
+   });
+   console.log("Comment saved with ID:", docRef.id);
+   getComments(pageId);
+   return docRef;
+ } catch (error) {
+   console.error("Error saving comment:", error);
+   throw error;
+ }
+}
+
+// async function saveComment(pageId, author, content) {
+//   try {
+//     const commentsRef = collection(db, "comments");
+
+//     // Query Firestore for existing documents with the same pageId
+//     const q = query(commentsRef, where("pageId", "==", pageId));
+//     const querySnapshot = await getDocs(q);
+
+//     if (querySnapshot.empty) {
+//       // If no document exists with this pageId, add a new comment
+//       const docRef = await addDoc(commentsRef, {
+//         pageId,
+//         author,
+//         content,
+//         timestamp: new Date()
+//       });
+//       console.log("Comment saved with ID:", docRef.id);
+//       return docRef;
+//     } else {
+//       console.log("A comment with this pageId already exists.");
+//       return null; // Or handle this case differently
+//     }
+//   } catch (error) {
+//     console.error("Error saving comment:", error);
+//     throw error;
+//   }
+// }
+
+// Get comments for a specific page
+function getComments(pageId) {
+   const commentsRef = collection(db, 'comments');
+ const q = query(
+   commentsRef, 
+   where('pageId', '==', pageId),
+   orderBy('timestamp', 'desc')
+ );
+ 
+ return getDocs(q).then((snapshot) => {
+   const comments = [];
+   snapshot.forEach((doc) => {
+     comments.push({
+       id: doc.id,
+       ...doc.data()
+     });
+   });
+   return comments;
+ });
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  var pageId;
+  //const pageId = window.location.pathname; // Use page URL as ID
+  if (window.parent !== window) {
+  let parentUrl = window.parent.location;
+  pageId = parentUrl.pathname;
+}
+  const commentForm = document.getElementById('comment-form');
+  const commentsContainer = document.getElementById('comments-container');
+  
+  // Function to render a single comment
+  function renderComment(comment) {
+    const commentEl = document.createElement('div');
+    commentEl.classList.add('comment');
+    commentEl.innerHTML = `
+      <p class="author">${comment.author}</p>
+      <p class="content">${comment.content}</p>
+      <p class="timestamp">${comment.timestamp?.toDate ? comment.timestamp.toDate().toLocaleString() : 'Just now'}</p>
+    `;
+    return commentEl;
+  }
+
+  // Function to load comments
+  function loadComments() {
+    getComments(pageId).then(comments => {
+      // Clear existing comments
+      commentsContainer.innerHTML = '';
+      
+      // Add each comment to the container
+      comments.forEach(comment => {
+        const commentEl = renderComment(comment);
+        commentsContainer.appendChild(commentEl);
+      });
+    }).catch(error => {
+      console.error('Error loading comments:', error);
+      commentsContainer.innerHTML = '<p>Unable to load comments</p>';
+    });
+  }
+
+  // Initial load of comments
+  loadComments();
+  
+  // Handle form submission
+  commentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const authorInput = document.getElementById('author');
+    const contentInput = document.getElementById('content');
+    
+    const author = authorInput.value.trim();
+    const content = contentInput.value.trim();
+    
+    if (!author || !content) {
+      alert('Please enter both name and comment');
+      return;
+    }
+    
+    // Disable form during submission
+    const submitButton = commentForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Posting...';
+    
+    saveComment(pageId, author, content)
+      .then((newCommentRef) => {
+        // Create a new comment element to append immediately
+        const newComment = {
+          id: newCommentRef.id,
+          author: author,
+          content: content,
+          timestamp: { toDate: () => new Date() } // Temporary timestamp
+        };
         
-        const token = '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'; // Required for posting comments (optional for reading)
-
-        async function loadComments() {
-            const response = await fetch(`https://api.github.com/repos/${repo}/issues/${issueNumber}/comments`);
-            const comments = await response.json();
-
-
-
-            if (comments.length === 0) {
-                console.log("No comments found.");
-                return;
-            }
-
-          //  let cleanedComments = [];
-          let processedComments = [];
-            for (let i = 0; i < comments.length; i++) {
-                let commentText = comments[i].body; // Original comment text
-             //   cleanedComments.push(commentText);  // Add to new array without username
-
-                let parts = commentText.split(/:(.*)/s); // Splits into [str1, str2] keeping rest intact
-                let heading = parts[0].trim();  // str1 as heading
-                let body = (parts[1] || "").trim(); // str2 as body (if exists)
-               
-                processedComments.push(`<li><strong><span style="text-transform:uppercase">${heading}</span>:</strong><br> ${body}<br><br></li>`);
-            }   
-
-
-             // Display processed comments
-             document.getElementById('commentList').innerHTML = processedComments.join('');
-
-            // Process the last comment separately
-            const lastComment = processedComments[processedComments.length - 1];
-            if (lastComment != null){
-                 document.getElementById('lastComment').innerHTML = `Last comment: ${lastComment}`;
-            }
-            // Display cleaned comments (without usernames)
-          //  document.getElementById('commentList').innerHTML = cleanedComments.map(c => `<li>${c}</li>`).join('');
-
-            // Process the last comment (without username)
-          //  const lastComment = cleanedComments[cleanedComments.length - 1];
-          //  document.getElementById('lastComment').innerText = `Last comment: ${lastComment}`;
+        // Prepend the new comment to the container
+        const newCommentEl = renderComment(newComment);
+        if (commentsContainer.firstChild) {
+          commentsContainer.insertBefore(newCommentEl, commentsContainer.firstChild);
+        } else {
+          commentsContainer.appendChild(newCommentEl);
         }
+        
+        // Reset form
+        authorInput.value = '';
+        contentInput.value = '';
+        
+        // Optional: Reload full comments to ensure server-side timestamp
+        loadComments();
+      })
+      .catch((error) => {
+        console.error('Error saving comment:', error);
+        alert('Failed to post comment. Please try again.');
+      })
+      .finally(() => {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.textContent = 'Post Comment';
+      });
+  });
+});
 
-
-        async function submitComment() {
-            const author = document.getElementById('author-input').value;
-            const comment = document.getElementById('commentInput').value;
-            if (!comment) return alert("Comment cannot be empty");
-            if (author && comment) {
-                await fetch(`https://api.github.com/repos/${repo}/issues/${issueNumber}/comments`, {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `token ${token}`,
-                        'Accept': 'application/vnd.github.v3+json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ body: author + ":" + comment })
-                });
-
-                document.getElementById('commentInput').value = '';
-                document.getElementById('author-input').value = '';
-                loadComments();
-            }
-            else {
-                alert('Please enter your name and comment.');
-            }
-        }
-
-        window.onload = loadComments;
 
 </script>
-    
-
-
