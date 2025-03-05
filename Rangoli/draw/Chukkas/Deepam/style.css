@@ -1,0 +1,15 @@
+.container {
+    text-align: center; /* Ensures heading and iframe are centered */
+}
+
+.flip-book {
+    width: 400px; /* Adjust as needed */
+    height: 500px; /* Adjust as needed */
+    background-color: lightgray; /* Just for visibility */
+    
+    /* Centering the flip-book */
+    margin:0 auto; /* Centers it horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 

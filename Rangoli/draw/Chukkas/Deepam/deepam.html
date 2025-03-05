@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chukka Muggulu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="main-container">
+    <div class="container">
+        <h1 align="center"> Click/Flip the book to see instructions</h1>
+        <div class="flip-book" id="demoBookExample1">
+        </div>
+        <hr>
+        <iframe id="commentIframe" src="../comments.html" width="100%" style="border: none; overflow: hidden;" ></iframe>
+    </div>
+   
+</div>
+<script>
+  function resizeIframe() {
+    var iframe = document.getElementById("commentIframe");
+    if (iframe) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    }
+  }
+
+  // Resize when iframe loads
+  document.getElementById("commentIframe").onload = function() {
+    resizeIframe();
+  };
+
+  window.onload = function() {
+    window.parent.postMessage(
+      { type: "resize", height: document.body.scrollHeight },
+      "*"
+    );
+  }
+
+
+  window.addEventListener("message", function(event) {
+    if (event.data.type === "resize") {
+      document.getElementById("commentIframe").style.height = event.data.height + "px";
+    }
+  }, false);
+
+  
+</script>
+</body>
+<script  type="module" src="deepam.js"></script>
+</html>
