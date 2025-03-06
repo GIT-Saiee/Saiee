@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     );
    
-    pageFlip2.loadFromImages(['images/melika5/12.jpg','images/melika5/1.jpg', 'images/melika5/2.jpg','images/melika5/3.jpg','images/melika5/4.jpg', 'images/melika5/5.jpg','images/melika5/7.jpg', 'images/melika5/8.jpg','images/melika5/9.jpg', 'images/melika5/10.jpg','images/melika5/11.jpg', 'images/melika5/12.jpg']);
-    });   
- 
- 
+     
+    pageFlip2.loadFromImages(['images/9.jpg','images/1.jpg', 'images/2.jpg','images/3.jpg','images/4.jpg', 'images/5.jpg','images/7.jpg', 'images/8.jpg','images/9.jpg']);
+}); 
