@@ -1,0 +1,45 @@
+img{
+    width: 20%;
+    height: auto;   
+    padding: 20PX; 
+    text-align: center;
+}
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+body{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+}
+label{
+    MARGIN :25PX 5PX;
+}
+#remove_items{
+    background-color: rgb(132, 180, 221);
+    color : #303030
+    padding: 20px;
+
+}
+
+#add_btn{
+    background_color: #4CAF50;
+    color: rgb(95, 63, 207);
+    padding: 10px 20px; 
+    border: 2px solid #4CAF50;
+    border-radius: 4px; 
+    margin: 10px;
+    font-weight: bold; 
+    cursor: pointer;
+}
+#rm_btn{
+    background_color: #f44336;
+    color: rgb(204, 84, 150);
+    padding: 10px 20px; 
+    border: 2px solid #f44336;
+    border-radius: 4px; 
+    margin: 10px;
+    font-weight: bold; 
+    cursor: pointer;
+}

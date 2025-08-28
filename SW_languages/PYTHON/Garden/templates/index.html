@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit List</title>   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div >
+        <img src="{{url_for('static', filename='images/transparent-fruit-24.png')}}" alt="Fruits">
+         <p class="logo-text">Fruit Garden Care</p>
+    </div>
+    <div id="remove_items">
+        <form action="/remove_fruits" method="POST">
+            {% for item in fruits_items %}
+                <input type="checkbox" name="rm_fruits" value="{{ item }}" id=" {{ item }}">
+                <label for="{{ item }}"name ="{{item}}">{{ item }}</label><br>
+            {% endfor %}
+            <input type="submit" value="Remove" id = 'rm_btn'>
+        </form>
+            
+        </div>
+       
+    <div id ="add_item">
+        <form action="/add_fruits" method="POST">
+            <select name="select_fruits">
+                  {% for fruit in all_fruits %}
+                    <option value="{{ fruit }}">{{ fruit }}</option>
+                  {% endfor %}
+                  <input type="submit" value="Add" id = 'add_btn'>
+        </form>
+  
+</body>
+</html>
