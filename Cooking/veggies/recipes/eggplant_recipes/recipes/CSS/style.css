@@ -30,7 +30,7 @@ h1 {
 /* Mobile layout (e.g., for screens smaller than 768px) */
 @media screen and (max-width: 768px) {
   .gallery{
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    grid-template-columns: repeat(3, 1fr); /* 2 columns on mobile */
     /* Or even 1fr 1fr for a more flexible 2-column layout */
   }
 }
