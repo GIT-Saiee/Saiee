@@ -1,8 +1,10 @@
 import sqlite3
+conn_images = sqlite3.connect('images.db')
+cursor_images= conn_images.cursor()
 
 fruits_list = [
     {
-        "Name": "apple",
+        "Name": "Apple",
         "FloweringMonth": "April",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -33,7 +35,7 @@ fruits_list = [
         "Count_per_year" : 12  } ,
 
      {
-        "Name": "fig",
+        "Name": "Fig",
         "FloweringMonth": "no flower",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -43,7 +45,7 @@ fruits_list = [
         "HarvestTime": "Late summer to early fall",
         "Count_per_year" : 100   },
     {
-        "Name": "grape",
+        "Name": "Grape",
         "FloweringMonth": "April",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -53,7 +55,7 @@ fruits_list = [
         "HarvestTime": "Late summer to early fall",
         "Count_per_year" : 50   },
     {
-        "Name": "orange",
+        "Name": "Orange",
         "FloweringMonth": "April",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -63,7 +65,7 @@ fruits_list = [
         "HarvestTime": "Late summer to early fall",
         "Count_per_year" : 100 },
          {
-        "Name": "peach",
+        "Name": "Peach",
         "FloweringMonth": "April",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -73,7 +75,7 @@ fruits_list = [
         "HarvestTime": "Late summer to early fall",
         "Count_per_year" : 25  } ,
          {
-        "Name": "pear",
+        "Name": "Pear",
         "FloweringMonth": "April",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -83,7 +85,7 @@ fruits_list = [
         "HarvestTime": "Late summer to early fall",
         "Count_per_year" : 30   } ,
          {
-        "Name": "plum",
+        "Name": "Plum",
         "FloweringMonth": "April",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -93,7 +95,7 @@ fruits_list = [
         "HarvestTime": "Late summer to early fall",
         "Count_per_year" : 30   } ,
          {
-        "Name": "passion fruit",
+        "Name": "Passion Fruit",
         "FloweringMonth": "April",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -103,7 +105,7 @@ fruits_list = [
         "HarvestTime": "Late summer to early fall",
         "Count_per_year" : 30   } ,
         {
-        "Name": "persimon",
+        "Name": "Persimon",
         "FloweringMonth": "April",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -113,7 +115,7 @@ fruits_list = [
         "HarvestTime": "Late summer to early fall",
         "Count_per_year" : 75 } ,   
          {
-        "Name": "pomegranate",
+        "Name": "Pomegranate",
         "FloweringMonth": "April",
         "FruitingMonth": "May",
         "Fertilizer": "All-purpose fertilize",
@@ -123,27 +125,54 @@ fruits_list = [
         "HarvestTime": "Late summer to early fall",
         "Count_per_year" : 5} 
 ]
-# fruits = ["apple","cherry","donut peach","fig","grape","orange","peach","pear","plum","passion fruit","persimon","pomegranate"]
-# fruits = sorted(fruits)
-connection = sqlite3.connect("fruits.db")
-cursor = connection.cursor()   
-cursor.execute("CREATE TABLE IF NOT EXISTS fruits (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, FloweringMonth TEXT, FruitingMonth TEXT, Fertilizer TEXT, Sunlight TEXT, Water TEXT, Soil TEXT, HarvestTime TEXT,Count_per_year INTEGER)")
 
-for fruit in fruits_list:
-    cursor.execute("INSERT INTO fruits (Name, FloweringMonth, FruitingMonth, Fertilizer, Sunlight, Water, Soil, HarvestTime, Count_per_year) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", (fruit["Name"], fruit["FloweringMonth"], fruit["FruitingMonth"], fruit["Fertilizer"], fruit["Sunlight"], fruit["Water"], fruit["Soil"], fruit["HarvestTime"], fruit["Count_per_year"]))       
-#  fruit_list = [ (1, ""), (1999, "Grand Theft Auto 2"), (2001, "Grand Theft Auto III"), (2002, "Grand Theft Auto: Vice City"), (2004, "Grand Theft Auto: San Andreas"), (2008, "Grand Theft Auto IV"), (2013, "Grand Theft Auto V") ]
-for row in cursor.execute("SELECT * FROM fruits"):
-    print(row)
-# cursor.executemany("INSERT INTO gta VALUES (?, ?)", release_list)
-# print("**************************************************")
-# for row in cursor.execute("SELECT * FROM gta"):
-#     print(row)
-# print("**************************************************")
-# cursor.execute("SELECT * FROM gta WHERE year=2001")
-# print(cursor.fetchall())    
-# print("**************************************************")
-# cursor.execute("UPDATE gta SET year=2000 WHERE title='Grand Theft Auto 2'")
-# print("**************************************************")
-# cursor.execute("DELETE FROM gta WHERE year=1999")
-connection.commit()
-connection.close()
+image_urls = {
+    
+    'Apple' : ["images/Fruits/Apple/apple_slices.jpg",
+    "images/Fruits/Apple/apple.jpg",
+    "images/Fruits/Apple/colored.jpg",
+    ],
+    'Orange' : ["images/Fruits/Orange/double.png",
+    "images/Fruits/Orange/orange.png",
+    "images/Fruits/Orange/peeled.png",
+    "images/Fruits/Orange/slice.png"
+    ]
+}
+
+def create_tables(): 
+    connection1 = sqlite3.connect("fruits.db")
+    cursor1 = connection1.cursor() 
+    cursor1.execute("CREATE TABLE IF NOT EXISTS fruits (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT COLLATE NOCASE, FloweringMonth TEXT, FruitingMonth TEXT, Fertilizer TEXT, Sunlight TEXT, Water TEXT, Soil TEXT, HarvestTime TEXT, Count_per_year INTEGER)")
+    cursor1.execute("CREATE TABLE fruit_images (id INT PRIMARY KEY, fruit_id INT, image_url VARCHAR(255) NOT NULL, FOREIGN KEY (fruit_id) REFERENCES fruits(id))")
+    connection1.commit()
+    connection1.close()
+
+def insert_fruits_data_into_tables():
+    connection1 = sqlite3.connect("fruits.db")
+    cursor1 = connection1.cursor()
+    for fruit in fruits_list:
+        cursor1.execute("INSERT INTO fruits (Name, FloweringMonth, FruitingMonth, Fertilizer, Sunlight, Water, Soil, HarvestTime, Count_per_year) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", (fruit["Name"], fruit["FloweringMonth"], fruit["FruitingMonth"], fruit["Fertilizer"], fruit["Sunlight"], fruit["Water"], fruit["Soil"], fruit["HarvestTime"], fruit["Count_per_year"]))       
+        fruit_id = cursor1.lastrowid
+        print(f"Inserted fruit '{fruit}' with ID: {fruit_id}")
+        this_fruit_image_list = image_urls.get(fruit["Name"])
+        if this_fruit_image_list is not None:
+            for url in this_fruit_image_list:
+                cursor1.execute("INSERT INTO fruit_images (fruit_id, image_url) VALUES (?, ?)", (fruit_id, url))
+    connection1.commit()
+    connection1.close()
+
+def get_urls(fruit_name):
+    connection1 = sqlite3.connect("fruits.db")
+    cursor1 = connection1.cursor()
+    cursor1.execute("SELECT f.Name, i.image_url FROM fruits f JOIN fruit_images i ON f.id = i.fruit_id WHERE f.name = ?", (fruit_name, ))
+    results = cursor1.fetchall()
+    url_list=[]
+    for row in results:
+        url_list.append(row)
+    connection1.commit()
+    connection1.close()
+    return url_list
+
+if __name__ == '__main__':
+    create_tables()
+    insert_fruits_data_into_tables()

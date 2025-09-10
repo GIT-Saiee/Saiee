@@ -16,15 +16,15 @@ body{
 label{
     MARGIN :25PX 5PX;
 }
-#remove_items{
+#add_item{
     background-color: rgb(132, 180, 221);
-    color : #303030
+    color : #303030;
     padding: 20px;
 
 }
 
 #add_btn{
-    background_color: #4CAF50;
+    background-color: #4CAF50;
     color: rgb(95, 63, 207);
     padding: 10px 20px; 
     border: 2px solid #4CAF50;
@@ -33,13 +33,64 @@ label{
     font-weight: bold; 
     cursor: pointer;
 }
-#rm_btn{
-    background_color: #f44336;
-    color: rgb(204, 84, 150);
-    padding: 10px 20px; 
-    border: 2px solid #f44336;
-    border-radius: 4px; 
-    margin: 10px;
-    font-weight: bold; 
-    cursor: pointer;
+
+label[name='key']
+{
+    font-weight: bold;
+    text-decoration-color: #f44336;
 }
+label[name='Fruit_Name']
+{
+    font-weight: bold;
+    font-size: xx-large;
+    text-decoration-color: #4CAF50;
+    font-size: 1.2em;
+    color: #4CAF50;
+    text-transform: uppercase;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Example: responsive columns */
+    gap: 10px; /* Space between grid items */
+}
+
+.grid-item {
+    /* Styles for individual grid cells */
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+}
+ .image-container {
+             display: flex;
+              gap: 50px; 
+            /* Space between grid items */
+            width:150px ;/* Small size */
+            height: 150px;
+            cursor: pointer;
+ }
+ .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: hidden;
+            transition: transform 0.3s ease; 
+            /* Smooth transition */
+        }
+
+   /* Fullscreen modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }    
