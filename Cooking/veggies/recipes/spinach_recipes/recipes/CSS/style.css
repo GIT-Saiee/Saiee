@@ -91,6 +91,8 @@ h1 {
 }
 
 #full-size-image {
+  position: relative;
+  z-index: 50; 
   max-width: 100%;
   max-height: 80vh; /* Viewport height */
   display: inline-block;
@@ -110,14 +112,28 @@ h1 {
   font-size: 30px;
   transition: 0.6s ease;
   user-select: none;
+
+    z-index: 100;
+
 }
-@media (max-width: 600px) {
-  .prev-button,.next-button {
-    top: 50%;  /* Move it closer to the edge */
-    font-size: 30px; /* Make the button a bit smaller if needed */
+@media (max-width: 768px) {
+  /* For screens smaller than 768px, adjust button positions */
+  .prev-button {
+    left: 5%; /* Position further to the side to clear the image */
+  }
+
+  .next-button {
+    right: 5%; /* Position further to the side to clear the image */
+  }
+
+  /* Example: Add a semi-transparent background to the buttons for clarity */
+  .prev-button, .next-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
     padding: 10px;
   }
 }
+
 .prev-button:hover,
 .prev-button:focus {
     color: #33ac97;
