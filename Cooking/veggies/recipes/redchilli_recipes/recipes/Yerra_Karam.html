@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yerra Karam Recipe</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Yerra Karam Recipe</h1>
+    </header>
+
+    <main>
+        <main class="gallery" id="image-collage">
+        <div class="gallery-item">
+            <img src="images/1.jpg" alt=" 1 Onion, 3 Tomatoes,30 kashmiri chillies, 1 whole garlic.">
+        </div>
+        <div class="gallery-item">
+            <img src="images/2.jpg" alt="Cut ,Cube and Peel the onion, tomato, chilli and garlic.">
+        </div>
+        <div class="gallery-item">
+            <img src="images/3.jpg" alt="Add oil and Saute onion pieces along with chilli pieces for 2 mins.">
+        </div>
+        <div class="gallery-item">
+            <img src="images/4.jpg" alt="Add garlic pieces too and saute for 2 more mins.">
+        </div>
+        <div class="gallery-item">
+            <img src="images/5.jpg" alt="Add tomato pieces and saute for 5 mins and let it cool for 30mins">
+        </div>
+        <div class="gallery-item">
+            <img src="images/6.jpg" alt="Pour all the the sauted mixture into mixer and make a smooth paste .">
+        </div>
+        <div class="gallery-item">
+            <img src="images/7.jpg" alt=" Karam Paste is ready for Tempering/Tadka/Tiragamatha.">
+        </div>
+        <div class="gallery-item">
+            <img src="images/8.jpg" alt="Put 15 TBSP of oil, add jeera and mustard to the oil and let it splutter.And add the karam paste. Let it stay on stove for some mins until the rawness is gone.">
+        </div>
+        <div class="gallery-item">
+            <img src="images/9.jpg" alt=" Stir once in a while. Final ready-to-serve Yerra Karam is ready.This is served as side dish to Idly or Dosa">
+        </div>
+       
+        </main>
+
+    <!-- The Modal (Image Enlarger) -->
+        <div id="imageModal" class="modal">
+            <span class="close-btn">&times;</span>
+            <div class="modal-content">
+            <a class="prev-button">&#10094;</a>
+            <img id="full-size-image" alt="" src="">
+            <a class="next-button">&#10095;</a>
+                <div id="caption"></div>
+            </div>
+            
+        </div>
+
+        <div id ="recipe-content">
+             <!-- This h2 will serve as the title on the printed page -->
+            <h2 class="print-only"> </h2>
+            <button onclick="window.print()">
+                 <img src="images/printer-icon.png" alt="Print" style="width: 24px; vertical-align: middle;">
+                Print Recipe
+            </button>
+        
+        <section>
+            <h2>Description</h2>
+            <p>A Hot and Spicy chutney served for breakfast. It's great for Idlies and Dosa.</p>
+        </section>
+
+        <section>
+            <h2>Ingredients</h2>
+            <ul>
+                <li> 1 Onion, 3 Tomatoes,30 kashmiri chillies, 1 whole garlic.</li>
+                <li>2 tbsp oil for Saute </li>
+                <li>15 tbsp oil for Tempering</li>
+                <li>1tsp jeera/cumin seeds</li>
+                <li>1tsp mustard seeds</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Instructions</h2>
+            <ol>
+                <li>Cut ,Cube and Peel the onion, tomato, chilli and garlic.</li>
+                <li>Add oil and Saute onion pieces along with chilli pieces for 2 mins.</li>
+                <li>Add garlic pieces too and saute for 2 more mins.</li>
+                <li>Add tomato pieces and saute for 5 mins and let it cool for 30mins.</li>
+                <li>Pour all the the sauted mixture into mixer and make a smooth paste.</li>
+                <li>Karam Paste is ready for Tempering/Tadka/Tiragamatha.</li>
+                <li>Put 15 TBSP of oil, add jeera and mustard to the oil and let it splutter.And add the karam paste.</li>
+                <li> Let it stay on stove for some mins until the rawness is gone.</li>
+                <li>Stir once in a while. </li>
+                <li>Final ready-to-serve Yerra Karam is ready.</li>
+                <li>The Ingredients specified makes Karam for 30 dosas. You can refrigerate for 2 weeks.</li>
+                
+            </ol>
+        </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Recipe Site. All rights reserved.</p>
+    </footer>
+<script src="script/script.js"></script>
+</body>
+</html>

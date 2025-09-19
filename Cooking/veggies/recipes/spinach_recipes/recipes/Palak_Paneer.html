@@ -13,7 +13,7 @@
     </header>
 
     <main>
-        <main class="gallery">
+        <main class="gallery" id="image-collage">
         <div class="gallery-item">
             <img src="images/1.jpg" alt="Palak Paste made as per instructions in the recipe.">
         </div>
@@ -47,7 +47,14 @@
             
         </div>
 
-
+        <div id ="recipe-content">
+             <!-- This h2 will serve as the title on the printed page -->
+            <h2 class="print-only"> </h2>
+            <button onclick="window.print()">
+                 <img src="images/printer-icon.png" alt="Print" style="width: 24px; vertical-align: middle;">
+                Print Recipe
+            </button>
+        
         <section>
             <h2>Description</h2>
             <p>A simple and most delicious Paneer Spinach recipe perfect for lunch or dinner. It's great for rotis or rice.</p>
@@ -99,6 +106,7 @@
                 <li>Serve hot with rotis or rice.</li>
             </ol>
         </section>
+        </div>
     </main>
 
     <footer>

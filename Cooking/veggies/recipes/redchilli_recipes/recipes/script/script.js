@@ -16,7 +16,7 @@ let currentIndex = 0;
 let imageSources = [];
 let imageData =[];
 // Populate the imageData array on page load
-galleryItems.forEach((img, index) => {
+galleryItems.forEach((img, _index) => {
   imageData.push({
     full: img.getAttribute('src'),
     caption: img.getAttribute('alt')
@@ -24,7 +24,7 @@ galleryItems.forEach((img, index) => {
 });
 
 // Populate the imageSources array on page load
-galleryItems.forEach((img, index) => {
+galleryItems.forEach((img, _index) => {
   imageSources.push(img.getAttribute('src'));
 });
 
@@ -84,6 +84,18 @@ modal.addEventListener('click', (event) => {
     closeModal();
   }
 });
+
+
+
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowLeft') {
+    prevImage(); // Replace with your actual function
+  } else if (event.key === 'ArrowRight') {
+    nextImage(); // Replace with your actual function
+  }
+});
+
 
 // function printRecipe() {
 //   // Store the original document title to restore it later
