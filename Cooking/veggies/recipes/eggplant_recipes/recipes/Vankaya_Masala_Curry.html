@@ -40,12 +40,26 @@
         </div>
         </main>
 
-    <!-- The Modal (Image Enlarger) -->
+
+            <!-- The Modal (Image Enlarger) -->
         <div id="imageModal" class="modal">
             <span class="close-btn">&times;</span>
-            <img class="modal-content" id="modalImage" alt="">
-            <div id="caption"></div>
+            <div class="modal-content">
+            <a class="prev-button">&#10094;</a>
+            <img id="full-size-image" alt="" src="">
+            <a class="next-button">&#10095;</a>
+                <div id="caption"></div>
+            </div>
+            
         </div>
+
+        <div id ="recipe-content">
+             <!-- This h2 will serve as the title on the printed page -->
+            <h2 class="print-only"> </h2>
+            <button onclick="window.print()">
+                 <img src="images/printer-icon.png" alt="Print" style="width: 24px; vertical-align: middle;">
+                Print Recipe
+            </button>
 
 
         <section>

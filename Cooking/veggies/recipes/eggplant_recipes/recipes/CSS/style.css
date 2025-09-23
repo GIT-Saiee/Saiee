@@ -20,7 +20,7 @@ h1 {
     display: grid;
     /* Creates a responsive grid of at least 250px wide columns */
     /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-    grid-template-columns: repeat(auto-fit, minmax(125px, 2fr));
+    grid-template-columns: repeat(3, minmax(125px, 2fr));
     gap: 15px;
     padding: 20px;
     /* max-width: 1500px; */
@@ -53,12 +53,14 @@ h1 {
     display: block;
 }
 
+
+
 /* The Modal (Pop-up window for enlarged image) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
-    z-index: 100; /* Stays on top of everything else */
-    padding-top: 60px;
+    z-index: 9999; /* Stays on top of everything else */
+    /* padding-top: 60px; */
     left: 0;
     top: 0;
     width: 100%;
@@ -68,13 +70,92 @@ h1 {
 }
 
 /* Modal content (the enlarged image) */
-.modal-content {
+.full-size-image {
     margin: auto;
     display: block;
     width: 80%;
     max-width: 800px;
 }
 
+
+
+.modal-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+}
+
+#full-size-image {
+  position: relative;
+  z-index: 50; 
+  max-width: 100%;
+  max-height: 80vh; /* Viewport height */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Style for the navigation buttons */
+.prev-button, .next-button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  user-select: none;
+
+    z-index: 100;
+
+}
+@media (max-width: 768px) {
+  /* For screens smaller than 768px, adjust button positions */
+  .prev-button {
+    left: 5%; /* Position further to the side to clear the image */
+  }
+
+  .next-button {
+    right: 5%; /* Position further to the side to clear the image */
+  }
+
+  /* Example: Add a semi-transparent background to the buttons for clarity */
+  .prev-button, .next-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+  }
+}
+
+.prev-button:hover,
+.prev-button:focus {
+    color: #33ac97;
+    text-decoration: none;
+    cursor: pointer;
+}
+.next-button:hover,
+.next-button:focus {
+    color: #33ac97;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.next-button {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev-button {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
 /* Caption text below the enlarged image */
 #caption {
     margin: auto;
@@ -85,6 +166,8 @@ h1 {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
+     font-size: 1.5em; /* Increase the font size */
+     font-weight: bold;
 }
 
 /* Close button for the modal */
@@ -98,6 +181,15 @@ h1 {
     transition: 0.3s;
 }
 
+/* New styles for mobile screens */
+@media (max-width: 600px) {
+  .close-btn {
+    top: 0px;  /* Move it closer to the edge */
+    right: 15px; /* Adjust the right margin */
+    font-size: 30px; /* Make the button a bit smaller if needed */
+    padding: 5px;
+  }
+}
 .close-btn:hover,
 .close-btn:focus {
     color: #bbb;
@@ -111,7 +203,35 @@ h1 {
     animation-duration: 0.6s;
 }
 
-@keyframes zoom {
+/* @keyframes zoom {
     from {transform: scale(0)}
     to {transform: scale(1)}
+} */
+
+
+
+/* Base styles (for screen display) */
+.print-only {
+  display: none; /* Hide this element by default */
+}
+
+/* Print-specific styles applied when the page is printed */
+@media print {
+  /* Show the print-only heading */
+  .print-only {
+    display: block;
+    margin-bottom: 20px; /* Optional: Add some spacing below the title */
+  }
+
+  /* Hide the photo collage and print button */
+  #image-collage,#recipe-content button {
+    display: none;
+  }
+  
+  /* Ensure a clean page for printing */
+  body {
+    background-color: white !important;
+    font-size: 12pt;
+    color: black;
+  }
 }
