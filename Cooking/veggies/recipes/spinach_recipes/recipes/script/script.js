@@ -109,3 +109,11 @@ modal.addEventListener('click', (event) => {
 //   }, 100); 
   
 // }
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowLeft') {
+    prevImage(); // Replace with your actual function
+  } else if (event.key === 'ArrowRight') {
+    nextImage(); // Replace with your actual function
+  }
+});
