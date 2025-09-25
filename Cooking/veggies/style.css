@@ -7,36 +7,30 @@ body{
   background-color: white; 
   margin: 0;
 }
-h3{
+h4{
   position: fixed;
   width: 100%;
   text-decoration: none;
-  background-color: #66db69; /* Green background */
+  background-color:#bfdbc0;; /* Green background */
   color: white; /* White text */
   margin: 0; /* Remove default margin */
   top: 0; /* Stick to the top */
   left: 0; /* Align to the left */
-  padding: 0px 0; /* Some padding */
+  padding: 20px 0 20px 0; /* Some padding */
   font-family: 'Arial', sans-serif; /* Font style */
-  text-align: center; /* Centered text */
-  font-size: 40px; /* Larger font size */
+  text-align: left; /* Centered text */
+  font-size: 20px; /* Larger font size */
   font-weight: bold ;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
   z-index: 1000; /* Ensure it stays on top */
 }
-h3 a{
+h4 a{
   text-decoration: none;
-  color: purple
+  color: purple;
   align-items: center;
   justify-content: center;
   gap: 10px; /* Space between image and text */
 }
-h3 img{
-  width:70px;
-  height:70px;
-  object-fit: cover;
-  margin: auto;
-} 
 .main-container {
     margin-top: 80px; /* To avoid overlap with the fixed navbar */
     width: 90%;
@@ -46,7 +40,7 @@ h3 img{
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(5, 1fr); /* 5 columns on desktop */
     gap:10px;
     place-items: center;
      justify-items: center; 
