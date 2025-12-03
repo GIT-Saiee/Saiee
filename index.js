@@ -57,7 +57,7 @@ const quotes = ["Do not be proud of wealth, people, relations and friends, or yo
 "You are only entitled to the action, never to its fruits --Bhagavad Gita",
 "It is better to live your own destiny imperfectly then to live an imitation of somebody elses life with perfection--Bhagavad Gita",
 "Free from all thoughts of I and mine .. a man finds absolute peace.--Bhagavad Gita",
-"In the heart of a person who is humble, patience, forgiveness, and devotion naturally grow.--Bhagavad Gita"
+"In the heart of a person who is humble, patient, forgiving, and devotional naturally grow.--Bhagavad Gita"
 ];
 
 let quoteIndex = getRandomIntInclusive(0,quotes.length);
