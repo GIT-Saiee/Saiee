@@ -1,0 +1,26 @@
+//import {PageFlip} from "https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.module.min.js";
+import {PageFlip} from "../../page-flip.module.js";
+document.addEventListener('DOMContentLoaded', function() {
+
+    const pageFlip2 = new PageFlip(
+        document.getElementById("demoBookExample2"),
+        {
+            width: 300, // base page width
+            height: 300, // base page height
+
+            size: "stretch", // page display size
+            // set threshold values:
+            minWidth: 315,
+            maxWidth: 500,
+            minHeight: 420,
+            maxHeight: 900,
+
+            maxShadowOpacity: 0.5, // Half shadow intensity
+            showCover: true,
+            mobileScrollSupport: false // disable content scrolling on mobile devices
+        }
+    );
+   
+     
+    pageFlip2.loadFromImages(['images/f.8.png','images/f.0.png', 'images/f.1.png','images/f.2.png','images/f.3.png', 'images/f.4.png','images/f.5.png', 'images/f.6.png','images/f.7.png','images/f.8.png']);
+}); 
