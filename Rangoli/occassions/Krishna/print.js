@@ -19,7 +19,7 @@ document.getElementById('printBookButton').addEventListener('click', function() 
     printableHTML += '<h2>Select Pages to Print</h2>';
     printableHTML += '<button onclick="window.print()">Print Selected</button>';
     printableHTML += '</div>';
-    const pageElements=['images/12.png','images/0.png', 'images/1.png','images/2.png','images/3.png', 'images/4.png','images/5.png','images/6.png','images/7.png','images/8.png','images/9.png','images/10.png','images/11.png','images/12.png']
+    const pageElements=['images/13.png','images/12.png','images/0.png', 'images/1.png','images/2.png','images/3.png', 'images/4.png','images/5.png','images/6.png','images/7.png','images/8.png','images/9.png','images/10.png','images/11.png','images/12.png']
     // 2. Iterate and create the HTML with checkboxe
     pageElements.forEach((page, index) => {
        
