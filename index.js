@@ -64,7 +64,12 @@ let quoteIndex = getRandomIntInclusive(0,quotes.length);
 let characterIndex = 0;
 
 updateText();
-
+reduceAudioVolume();
+function reduceAudioVolume(){
+    const audioE1 = document.getElementById("background-audio");
+    let volume = 0.5;   
+    audioE1.volume = volume;
+}
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
