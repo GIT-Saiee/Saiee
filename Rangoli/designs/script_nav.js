@@ -35,3 +35,13 @@ document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((but
 
 // Collapse sidebar by default on small screens
 if (window.innerWidth <= 1024) document.querySelector(".sidebar").classList.add("collapsed");
+
+
+document.addEventListener("click", function (e) {
+    const sidebar = document.querySelector(".sidebar");
+    const toggler = document.querySelector(".sidebar-toggler");
+
+    if (!sidebar.contains(e.target) && !toggler.contains(e.target)) {
+        document.querySelector(".sidebar").classList.add("collapsed");
+    }
+});
