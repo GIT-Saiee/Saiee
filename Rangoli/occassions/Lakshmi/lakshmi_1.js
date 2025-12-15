@@ -1,4 +1,4 @@
-import {PageFlip} from "../page-flip.module.js";
+import {PageFlip} from "./page-flip.module.js";
 document.addEventListener('DOMContentLoaded', function() {
 
  const pageFlip1 = new PageFlip(
@@ -20,5 +20,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 );
 
- pageFlip1.loadFromImages(['../images/lakshmi/lakshmi_14.png','../images/lakshmi/lakshmi_1.png','../images/lakshmi/lakshmi_2.png','../images/lakshmi/lakshmi_3.png','../images/lakshmi/lakshmi_4.png','../images/lakshmi/lakshmi_5.png','../images/lakshmi/lakshmi_6.png','../images/lakshmi/lakshmi_7.png','../images/lakshmi/lakshmi_8.png','../images/lakshmi/lakshmi_9.png','../images/lakshmi/lakshmi_10.png','../images/lakshmi/lakshmi_11.png','../images/lakshmi/lakshmi_12.png','../images/lakshmi/lakshmi_13.png','../images/lakshmi/lakshmi_14.png']);
+ pageFlip1.loadFromImages(['images/lakshmi/lakshmi_14.png','images/lakshmi/lakshmi_1.png','images/lakshmi/lakshmi_2.png','images/lakshmi/lakshmi_3.png','images/lakshmi/lakshmi_4.png','images/lakshmi/lakshmi_5.png','images/lakshmi/lakshmi_6.png','images/lakshmi/lakshmi_7.png','images/lakshmi/lakshmi_8.png','images/lakshmi/lakshmi_9.png','images/lakshmi/lakshmi_10.png','images/lakshmi/lakshmi_11.png','images/lakshmi/lakshmi_12.png','images/lakshmi/lakshmi_13.png','images/lakshmi/lakshmi_14.png']);
 });

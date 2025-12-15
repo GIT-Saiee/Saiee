@@ -4,28 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-container">
         <div class="container">
-            <h1 align="center"> Click/Flip the book to see instructions</h1>
-            <div class="flip-book" id="LakshmiKolam">
+            <div class="flip-book" id="demoBookExample1">
             </div>
-            <button id="printBookButton">
+            
+        </div>
+        <div class="container">
+            <div class="flip-book" id="demoBookExample2">
+            </div>
+            
+        </div>
+         <button id="printBookButton">
           <img src="images/printer-icon.png" alt="Print" style="width: 24px; vertical-align: middle;">
           Print Selected Pages</button>
 
         <div id="printable-content" style="display:none;">
         </div>
-             <hr>
+         <hr>
         <iframe id="commentIframe" src="../comments.html" width="100%" style="border: none; overflow: hidden;" scrolling="no"></iframe>
-        </div>
-       
     </div>
-    <script>
+        
+        
+        
+</div>
+<script>
   function resizeIframe() {
     var iframe = document.getElementById("commentIframe");
     if (iframe) {
@@ -52,11 +58,8 @@
     }
   }, false);
 
-  
 </script>
-    <script type="module" src="lakshmi_1.js"></script>
-    <script type="module" src="print_1.js"></script>
-
+    <script type="module" src="ratham.js"></script>
+    <script type="module" src="print.js"></script>
 </body>
-
 </html>

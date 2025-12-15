@@ -1,4 +1,4 @@
-import {PageFlip} from "../page-flip.module.js";
+import {PageFlip} from "./page-flip.module.js";
 document.addEventListener('DOMContentLoaded', function() {
 
  const pageFlip1 = new PageFlip(
@@ -20,5 +20,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 );
 
- pageFlip1.loadFromImages(['../images/SPK/sahasra11.png','../images/SPK/sahasra.png','../images/SPK/sahasra1.png','../images/SPK/sahasra2.png','../images/SPK/sahasra3.png','../images/SPK/sahasra4.png','../images/SPK/sahasra5.png','../images/SPK/sahasra6.png','../images/SPK/sahasra7.png','../images/SPK/sahasra8.png','../images/SPK/sahasra9.png','../images/SPK/sahasra10.png','../images/SPK/sahasra11.png']);
+ pageFlip1.loadFromImages(['images/SPK/sahasra11.png','images/SPK/sahasra.png','images/SPK/sahasra1.png','images/SPK/sahasra2.png','images/SPK/sahasra3.png','images/SPK/sahasra4.png','images/SPK/sahasra5.png','images/SPK/sahasra6.png','images/SPK/sahasra7.png','images/SPK/sahasra8.png','images/SPK/sahasra9.png','images/SPK/sahasra10.png','images/SPK/sahasra11.png']);
 });
