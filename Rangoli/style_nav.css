@@ -9,6 +9,7 @@
 }
 
 body {
+  
   min-height: 100vh;
   background: linear-gradient(#F1F3FF, #CBD4FF);
 }
@@ -241,7 +242,7 @@ body {
 
   .sidebar.collapsed {
     width: 270px;
-    left: -270px;
+    /* left: -270px; */
   }
 
   .sidebar.collapsed .sidebar-header .sidebar-toggler {
