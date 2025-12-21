@@ -84,14 +84,14 @@ body{
   display:flex;
   flex-direction: column;
   margin:0;
-  height:100vh;
+  height: 200vh;
   align-items: center;
   
 }
 
 .muggu-container{
 
-  height:100vh;
+  height:150vh;
   align-content: center;
   justify-content: center;
 } 
@@ -132,10 +132,10 @@ p{
 }
 
 .alt-text {
-  /* position: absolute;
+   /* position: absolute;
   bottom: 10px;
-  left: 50%; */
-  transform: translateX(-50%) scale(0);
+  left: 50%;  */
+ transform: translateX(-50%) scale(0);
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 5px 10px;
@@ -148,4 +148,4 @@ p{
 .grid-item1:hover .alt-text, .grid-item2:hover .alt-text, .grid-item3:hover .alt-text, .grid-item4:hover .alt-text
 {
   transform: translateX(-50%) scale(1);
-}
+} 
