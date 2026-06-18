@@ -1,0 +1,37 @@
+.text-decorate{
+    margin: 100;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: Lobster,monospace;
+    background-color: pale green;
+    color:skyblue
+}
+
+
+.small-size{
+    width:500px;
+    height:500px;
+    border-radius:5px;
+    padding:5px 5px;
+}
+.main-container{
+    margin-top:10;
+    display: grid;
+    grid-template-columns:auto auto auto; 
+    grid-template-rows:auto auto auto auto auto ;
+    justify-content: center;
+    position:absolute;
+    
+}
+.img-container{
+    position:relative;
+}
+.navbar{
+    margin: 0;
+    position:fixed;
+    top:0;
+    width:100%;
+    background-color:#fff;
+    box-shadow:0 2px 4px rgba(0,0,0,0.1);
+    z-index:1000;
+}

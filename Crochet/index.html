@@ -1,0 +1,28 @@
+<html>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<body>
+	<div class="navbar">
+		<div id="nav-placeholder"></div>
+	</div>
+		
+		  <script>
+			$.get("navigation.html", function(data){
+			  $("#nav-placeholder").replaceWith(data);
+			});
+		  </script> 
+	<h1 class="text-decorate">CrochetSkills</h1>
+	<div class="main-container">
+	<a href="#"><img class="small-size" src="images/IMG_3379.jpg" alt ="Draw String Bag"></a>
+	<a href="#"><img class="small-size" src="images/IMG_3380.jpg" alt ="Peach colored Bean Stitch Bag"></a>
+	<a href="#"><img class="small-size" src="images/IMG_3381.jpg" alt ="Peach colored Bean Stitch Bag"></a>
+	<a href="#"><img class="small-size" src="images/IMG_3450.jpg" alt ="green colored star stich Bag"></a>
+	
+	<a href="#"><img class="small-size" src="images/IMG_3452.jpg" alt ="green colored star stich Bag"></a>
+    <a href="#"><img class="small-size" src="images/IMG_3481.jpg" alt ="Three colored double crochet bag"></a>
+    <a href="#"><img class="small-size" src="images/IMG_3484.jpg" alt ="Three colored double crochet bag"></a>
+</div>
+</body>
+</html>
